@@ -50,7 +50,10 @@ struct TestPageView: View {
 }
 
 struct TestPageView_Previews: PreviewProvider {
+    static let userColor = UserColor()
+    
     static var previews: some View {
         TestPageView()
+            .environmentObject(userColor)
     }
 }

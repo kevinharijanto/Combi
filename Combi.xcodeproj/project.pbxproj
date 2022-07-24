@@ -12,11 +12,11 @@
 		0EC29244288D59AB002E3BEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29243288D59AB002E3BEE /* Preview Assets.xcassets */; };
 		0EC2924B288D59D5002E3BEE /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2924A288D59D5002E3BEE /* MainPageView.swift */; };
 		0EC2924D288D59F7002E3BEE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2924C288D59F7002E3BEE /* CardView.swift */; };
-		0EC2924F288D5A09002E3BEE /* TestPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2924E288D5A09002E3BEE /* TestPageView.swift */; };
 		0EC29255288D5A48002E3BEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29254288D5A48002E3BEE /* Extensions.swift */; };
 		0EC29256288D5D23002E3BEE /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29251288D5A32002E3BEE /* Ubuntu-B.ttf */; };
 		0EC29257288D5D25002E3BEE /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29252288D5A32002E3BEE /* Ubuntu-M.ttf */; };
 		0EC29258288D5D27002E3BEE /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29253288D5A32002E3BEE /* Ubuntu-R.ttf */; };
+		0EC2925E288D6447002E3BEE /* TestPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2925D288D6447002E3BEE /* TestPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +26,12 @@
 		0EC29243288D59AB002E3BEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EC2924A288D59D5002E3BEE /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		0EC2924C288D59F7002E3BEE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		0EC2924E288D5A09002E3BEE /* TestPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPageView.swift; sourceTree = "<group>"; };
 		0EC29251288D5A32002E3BEE /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
 		0EC29252288D5A32002E3BEE /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
 		0EC29253288D5A32002E3BEE /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		0EC29254288D5A48002E3BEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0EC29259288D5DED002E3BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EC2925D288D6447002E3BEE /* TestPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +64,7 @@
 		0EC2923B288D59AB002E3BEE /* Combi */ = {
 			isa = PBXGroup;
 			children = (
+				0EC29259288D5DED002E3BEE /* Info.plist */,
 				0EC2925C288D63AF002E3BEE /* View */,
 				0EC2925B288D6387002E3BEE /* System */,
 				0EC29254288D5A48002E3BEE /* Extensions.swift */,
@@ -95,7 +96,6 @@
 				0EC29242288D59AB002E3BEE /* Preview Content */,
 				0EC29250288D5A1C002E3BEE /* Fonts */,
 				0EC2923C288D59AB002E3BEE /* CombiApp.swift */,
-				0EC29259288D5DED002E3BEE /* Info.plist */,
 				0EC29240288D59AB002E3BEE /* Assets.xcassets */,
 			);
 			path = System;
@@ -105,8 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				0EC2924A288D59D5002E3BEE /* MainPageView.swift */,
+				0EC2925D288D6447002E3BEE /* TestPageView.swift */,
 				0EC2924C288D59F7002E3BEE /* CardView.swift */,
-				0EC2924E288D5A09002E3BEE /* TestPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			files = (
 				0EC29255288D5A48002E3BEE /* Extensions.swift in Sources */,
 				0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */,
-				0EC2924F288D5A09002E3BEE /* TestPageView.swift in Sources */,
+				0EC2925E288D6447002E3BEE /* TestPageView.swift in Sources */,
 				0EC2924D288D59F7002E3BEE /* CardView.swift in Sources */,
 				0EC2924B288D59D5002E3BEE /* MainPageView.swift in Sources */,
 			);
@@ -316,7 +316,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Combi/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Combi/System/Preview Content\"";
 				DEVELOPMENT_TEAM = 625ZX732CB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -346,7 +346,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Combi/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Combi/System/Preview Content\"";
 				DEVELOPMENT_TEAM = 625ZX732CB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
