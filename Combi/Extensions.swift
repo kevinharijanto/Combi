@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import SwiftUI
 
+// UIColor extension for Hex Color
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
@@ -23,10 +25,13 @@ extension UIColor {
             blue: rgb & 0xFF
         )
     }
-    
-    static let combiBlack = UIColor(rgb: 0x111315)
-    static let combiGray = UIColor(rgb:0x2A2E31)
-    static let combiPurple = UIColor(rgb: 0x6E62E5)
-    static let combiPink = UIColor(rgb: 0xFFC1C2)
-    static let combiLightBlue = UIColor(rgb: 0xDCE5FF)
 }
+
+extension Color {
+    static let combiBlack = Color(UIColor(rgb: 0x111315))
+    static let combiGray = Color(UIColor(rgb:0x2A2E31))
+    static let combiPurple = Color(UIColor(rgb: 0x6E62E5))
+    static let combiPink = Color(UIColor(rgb: 0xFFC1C2))
+    static let combiLightBlue = Color(UIColor(rgb: 0xDCE5FF))
+}
+

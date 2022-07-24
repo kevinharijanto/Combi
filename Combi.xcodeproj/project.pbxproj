@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2923C288D59AB002E3BEE /* CombiApp.swift */; };
-		0EC2923F288D59AB002E3BEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2923E288D59AB002E3BEE /* ContentView.swift */; };
 		0EC29241288D59AB002E3BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29240288D59AB002E3BEE /* Assets.xcassets */; };
 		0EC29244288D59AB002E3BEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29243288D59AB002E3BEE /* Preview Assets.xcassets */; };
 		0EC2924B288D59D5002E3BEE /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2924A288D59D5002E3BEE /* MainPageView.swift */; };
 		0EC2924D288D59F7002E3BEE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2924C288D59F7002E3BEE /* CardView.swift */; };
 		0EC2924F288D5A09002E3BEE /* TestPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2924E288D5A09002E3BEE /* TestPageView.swift */; };
 		0EC29255288D5A48002E3BEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29254288D5A48002E3BEE /* Extensions.swift */; };
+		0EC29256288D5D23002E3BEE /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29251288D5A32002E3BEE /* Ubuntu-B.ttf */; };
+		0EC29257288D5D25002E3BEE /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29252288D5A32002E3BEE /* Ubuntu-M.ttf */; };
+		0EC29258288D5D27002E3BEE /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29253288D5A32002E3BEE /* Ubuntu-R.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EC29239288D59AB002E3BEE /* Combi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC2923C288D59AB002E3BEE /* CombiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiApp.swift; sourceTree = "<group>"; };
-		0EC2923E288D59AB002E3BEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0EC29240288D59AB002E3BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EC29243288D59AB002E3BEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EC2924A288D59D5002E3BEE /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		0EC29252288D5A32002E3BEE /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
 		0EC29253288D5A32002E3BEE /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		0EC29254288D5A48002E3BEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0EC29259288D5DED002E3BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +64,8 @@
 		0EC2923B288D59AB002E3BEE /* Combi */ = {
 			isa = PBXGroup;
 			children = (
-				0EC29250288D5A1C002E3BEE /* Fonts */,
-				0EC2923C288D59AB002E3BEE /* CombiApp.swift */,
-				0EC2923E288D59AB002E3BEE /* ContentView.swift */,
-				0EC29240288D59AB002E3BEE /* Assets.xcassets */,
-				0EC29242288D59AB002E3BEE /* Preview Content */,
-				0EC2924A288D59D5002E3BEE /* MainPageView.swift */,
-				0EC2924C288D59F7002E3BEE /* CardView.swift */,
-				0EC2924E288D5A09002E3BEE /* TestPageView.swift */,
+				0EC2925C288D63AF002E3BEE /* View */,
+				0EC2925B288D6387002E3BEE /* System */,
 				0EC29254288D5A48002E3BEE /* Extensions.swift */,
 			);
 			path = Combi;
@@ -91,6 +87,28 @@
 				0EC29253288D5A32002E3BEE /* Ubuntu-R.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0EC2925B288D6387002E3BEE /* System */ = {
+			isa = PBXGroup;
+			children = (
+				0EC29242288D59AB002E3BEE /* Preview Content */,
+				0EC29250288D5A1C002E3BEE /* Fonts */,
+				0EC2923C288D59AB002E3BEE /* CombiApp.swift */,
+				0EC29259288D5DED002E3BEE /* Info.plist */,
+				0EC29240288D59AB002E3BEE /* Assets.xcassets */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		0EC2925C288D63AF002E3BEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EC2924A288D59D5002E3BEE /* MainPageView.swift */,
+				0EC2924C288D59F7002E3BEE /* CardView.swift */,
+				0EC2924E288D5A09002E3BEE /* TestPageView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +169,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC29256288D5D23002E3BEE /* Ubuntu-B.ttf in Resources */,
+				0EC29258288D5D27002E3BEE /* Ubuntu-R.ttf in Resources */,
+				0EC29257288D5D25002E3BEE /* Ubuntu-M.ttf in Resources */,
 				0EC29244288D59AB002E3BEE /* Preview Assets.xcassets in Resources */,
 				0EC29241288D59AB002E3BEE /* Assets.xcassets in Resources */,
 			);
@@ -163,7 +184,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EC2923F288D59AB002E3BEE /* ContentView.swift in Sources */,
 				0EC29255288D5A48002E3BEE /* Extensions.swift in Sources */,
 				0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */,
 				0EC2924F288D5A09002E3BEE /* TestPageView.swift in Sources */,
@@ -300,6 +320,7 @@
 				DEVELOPMENT_TEAM = 625ZX732CB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Combi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -329,6 +350,7 @@
 				DEVELOPMENT_TEAM = 625ZX732CB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Combi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

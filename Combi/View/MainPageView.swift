@@ -8,20 +8,20 @@
 import SwiftUI
 
 class UserColor: ObservableObject {
-    @Published var primaryColor : Color = Color(UIColor.combiGray)
-    @Published var secondaryColor : Color = Color(UIColor.combiPink)
-    @Published var accentColor : Color = Color(UIColor.combiLightBlue)
+    @Published var primaryColor : Color = .combiGray
+    @Published var secondaryColor : Color = .combiPink
+    @Published var accentColor : Color = .combiLightBlue
 }
 
 struct MainPageView: View {
     
     @StateObject var userColor = UserColor()
     
-//    init() {
-//        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Ubuntu-Bold", size: 36)!]
-//        
-//        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Ubuntu", size: 18)!]
-//    }
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Ubuntu-Bold", size: 36)!]
+        
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Ubuntu", size: 18)!]
+    }
     
     var body: some View {
         
