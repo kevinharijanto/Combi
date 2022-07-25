@@ -12,7 +12,7 @@ struct CombiApp: App {
     var body: some Scene {
         WindowGroup {
             MainPageView()
-//            TestView2()
+//            TestPageView()
         }
     }
 }
