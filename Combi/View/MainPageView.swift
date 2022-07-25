@@ -7,139 +7,141 @@
 
 import SwiftUI
 
-class UserColor: ObservableObject {
-    @Published var primaryColor : Color = .combiGray
-    @Published var secondaryColor : Color = .combiPink
-    @Published var accentColor : Color = .combiLightBlue
-}
-
 struct MainPageView: View {
     
     @StateObject var userColor = UserColor()
     
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Ubuntu-Bold", size: 36)!]
-        
-        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Ubuntu", size: 18)!]
-    }
+    @Namespace var namespace
+    @State var show = false
+    
+//    init() {
+//        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Ubuntu-Bold", size: 36)!]
+//
+//        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Ubuntu", size: 18)!]
+//    }
     
     var body: some View {
         
-        NavigationView {
-            ZStack {
-                Color("BGColor").edgesIgnoringSafeArea(.all)
-                    .navigationTitle("Combi-ne It!")
-                    .navigationBarTitleDisplayMode(.large)
+        ZStack {
+            Color("BGColor")
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView(showsIndicators: false) {
                 
-                ScrollView {
-                    VStack {
+                VStack(spacing: 0) {
+                    Text("Combi-ne It!")
+                        .font(.custom("Ubuntu-Bold", size: 36))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                    
+                    
+                    HStack(spacing: 20) {
                         
-                        HStack(spacing: 20) {
-                            
-                            VStack(spacing: 20) {
-                                ZStack {
-                                    ColorPicker("",selection: $userColor.primaryColor, supportsOpacity: false)
-                                        .labelsHidden()
-                                        .padding()
-                                        .scaleEffect(CGSize(width: 3, height: 3))
-                                    
-                                    Circle()
-                                        .fill(userColor.primaryColor)
-                                        .frame(width: 100, height: 100)
-                                        .allowsHitTesting(false)
-                                        .overlay(
-                                            Circle()
-                                                .stroke(Color(UIColor(rgb: 0xEFEEF3)), lineWidth: 5))
-                                }
-                                
-                                Text("Primary")
-                                    .font(Font.custom("Ubuntu", size: 16))
-                                    .foregroundColor(Color("TextColor"))
-                            }
-                            
-                            
-                            VStack(spacing: 20) {
-                                ZStack {
-                                    ColorPicker("",selection: $userColor.secondaryColor, supportsOpacity: false)
-                                        .labelsHidden()
-                                        .padding()
+                        VStack(spacing: 20) {
+                            ZStack {
+                                ColorPicker("",selection: $userColor.primaryColor, supportsOpacity: false)
+                                    .labelsHidden()
+                                    .padding()
                                     .scaleEffect(CGSize(width: 3, height: 3))
-
-                                    Circle()
-                                        .fill(userColor.secondaryColor)
-                                        .frame(width: 100, height: 100)
-                                        .allowsHitTesting(false)
-                                        .overlay(
-                                            Circle()
-                                            .stroke(Color(UIColor(rgb: 0xEFEEF3)), lineWidth: 5))
-                                }
                                 
-                                Text("Secondary")
-                                    .font(Font.custom("Ubuntu", size: 16))
-                                    .foregroundColor(Color("TextColor"))
+                                Circle()
+                                    .fill(userColor.primaryColor)
+                                    .frame(width: 100, height: 100)
+                                    .allowsHitTesting(false)
+                                    .overlay(
+                                        Circle()
+                                            .stroke(Color(UIColor(rgb: 0xEFEEF3)), lineWidth: 5))
                             }
                             
-                            VStack(spacing: 20) {
-                                ZStack {
-                                    ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
-                                        .labelsHidden()
-                                        .padding()
-                                    .scaleEffect(CGSize(width: 3, height: 3))
-
-                                    Circle()
-                                        .fill(userColor.accentColor)
-                                        .frame(width: 100, height: 100)
-                                        .allowsHitTesting(false)
-                                        .overlay(
-                                            Circle()
-                                            .stroke(Color(UIColor(rgb: 0xEFEEF3)), lineWidth: 5))
-                                }
-                                
-                                Text("Accent")
-                                    .font(Font.custom("Ubuntu", size: 16))
-                                    .foregroundColor(Color("TextColor"))
-                            }
-                        }
-                        .padding()
-                        
-                        HStack {
-                            Text("Views")
-                                .font(Font.custom("Ubuntu-Bold", size: 36))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .foregroundColor(Color("TextColor"))
-                            .padding()
-                            
-                            Rectangle()
-                                .fill(userColor.primaryColor)
-                                .frame(width: 20, height: 20)
-                            Rectangle()
-                                .fill(userColor.secondaryColor)
-                                .frame(width: 20, height: 20)
-                            Rectangle()
-                                .fill(userColor.accentColor)
-                                .frame(width: 20, height: 20)
+                            Text("Primary")
+                                .font(Font.custom("Ubuntu", size: 16))
                         }
                         
-                        NavigationLink(destination: TestPageView(), label: {
-                            CardView(image: "cityvector", category: "SwiftUI", heading: "Task Management App", author: "by Kevin Harijanto")
-                        })
                         
+                        VStack(spacing: 20) {
+                            ZStack {
+                                ColorPicker("",selection: $userColor.secondaryColor, supportsOpacity: false)
+                                    .labelsHidden()
+                                    .padding()
+                                    .scaleEffect(CGSize(width: 3, height: 3))
+                                
+                                Circle()
+                                    .fill(userColor.secondaryColor)
+                                    .frame(width: 100, height: 100)
+                                    .allowsHitTesting(false)
+                                    .overlay(
+                                        Circle()
+                                            .stroke(Color(UIColor(rgb: 0xEFEEF3)), lineWidth: 5))
+                            }
+                            
+                            Text("Secondary")
+                                .font(Font.custom("Ubuntu", size: 16))
+                        }
                         
-                        NavigationLink(destination: TestPageView(), label: {
-                            CardView(image: "Onboarding1", category: "SwiftUI", heading: "Task Management App", author: "by Kevin Harijanto")
-                        })
-                       
-                        Spacer()
+                        VStack(spacing: 20) {
+                            ZStack {
+                                ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
+                                    .labelsHidden()
+                                    .padding()
+                                    .scaleEffect(CGSize(width: 3, height: 3))
+                                
+                                Circle()
+                                    .fill(userColor.accentColor)
+                                    .frame(width: 100, height: 100)
+                                    .allowsHitTesting(false)
+                                    .overlay(
+                                        Circle()
+                                            .stroke(Color(UIColor(rgb: 0xEFEEF3)), lineWidth: 5))
+                            }
+                            
+                            Text("Accent")
+                                .font(Font.custom("Ubuntu", size: 16))
+                        }
                     }
                     .padding()
+                    
+                    HStack {
+                        Text("Views")
+                            .font(Font.custom("Ubuntu-Bold", size: 36))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        
+                        Button {
+                            print("Go to all scenes")
+                        } label: {
+                            Text("All Scenes")
+                                .font(Font.custom("Ubuntu", size: 18))
+                                .opacity(0.5)
+                        }
+                        .padding()
+
+                    }
+                    
+                    if !show {
+                        CardItem(namespace: namespace, show: $show, title: "Task Management App", screen: "2 Screens", subtitle: "Task management concept app from Dribbble.", image: "card1")
+                            .onTapGesture {
+                                withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                                    show.toggle()
+                                }
+                            }
+                    }
+                    
+                    Spacer(minLength: 200)
+                    
                 }
             }
+            .foregroundStyle(Color("TextColor"))
+            .padding()
+            
+            if show {
+                DetailView(namespace: namespace, show: $show, userColor: userColor)
+            }
         }
-        .environmentObject(userColor)
     }
 }
 
 struct MainPageView_Previews: PreviewProvider {
+    
     static var previews: some View {
         MainPageView()
     }
