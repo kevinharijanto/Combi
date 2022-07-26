@@ -11,8 +11,8 @@ import SwiftUI
 struct CombiApp: App {
     var body: some Scene {
         WindowGroup {
-            MainPageView()
-//            TestPageView()
+//            MainPageView()
+            OnboardingView()
         }
     }
 }

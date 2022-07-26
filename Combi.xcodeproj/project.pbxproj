@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E23C8ED288F8D9300E7F4F5 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8EC288F8D9300E7F4F5 /* Onboarding.swift */; };
+		0E23C8F1288F941600E7F4F5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8F0288F941600E7F4F5 /* OnboardingView.swift */; };
+		0E23C8F5288FA20800E7F4F5 /* InitialPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8F4288FA20800E7F4F5 /* InitialPickerView.swift */; };
 		0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2923C288D59AB002E3BEE /* CombiApp.swift */; };
 		0EC29241288D59AB002E3BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29240288D59AB002E3BEE /* Assets.xcassets */; };
 		0EC29244288D59AB002E3BEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29243288D59AB002E3BEE /* Preview Assets.xcassets */; };
@@ -15,17 +18,19 @@
 		0EC29256288D5D23002E3BEE /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29251288D5A32002E3BEE /* Ubuntu-B.ttf */; };
 		0EC29257288D5D25002E3BEE /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29252288D5A32002E3BEE /* Ubuntu-M.ttf */; };
 		0EC29258288D5D27002E3BEE /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29253288D5A32002E3BEE /* Ubuntu-R.ttf */; };
-		0EC2925E288D6447002E3BEE /* TestPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2925D288D6447002E3BEE /* TestPageView.swift */; };
 		0EC2926A288D7157002E3BEE /* UserColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29269288D7157002E3BEE /* UserColor.swift */; };
-		0EC2926E288DA422002E3BEE /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2926D288DA422002E3BEE /* MockView.swift */; };
 		0EC2927C288ECB9A002E3BEE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2927B288ECB9A002E3BEE /* Card.swift */; };
 		0EC2927F288ECE2E002E3BEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2927E288ECE2E002E3BEE /* Extensions.swift */; };
 		0EC29281288ECE3A002E3BEE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29280288ECE3A002E3BEE /* Helpers.swift */; };
 		0EC29283288EFC46002E3BEE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29282288EFC46002E3BEE /* DetailView.swift */; };
 		0EC29286288EFD95002E3BEE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29285288EFD95002E3BEE /* DetailViewModel.swift */; };
+		0EC29288288F1FAB002E3BEE /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29287288F1FAB002E3BEE /* MockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E23C8EC288F8D9300E7F4F5 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		0E23C8F0288F941600E7F4F5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0E23C8F4288FA20800E7F4F5 /* InitialPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPickerView.swift; sourceTree = "<group>"; };
 		0EC29239288D59AB002E3BEE /* Combi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC2923C288D59AB002E3BEE /* CombiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiApp.swift; sourceTree = "<group>"; };
 		0EC29240288D59AB002E3BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,14 +41,13 @@
 		0EC29252288D5A32002E3BEE /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
 		0EC29253288D5A32002E3BEE /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		0EC29259288D5DED002E3BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EC2925D288D6447002E3BEE /* TestPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPageView.swift; sourceTree = "<group>"; };
 		0EC29269288D7157002E3BEE /* UserColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserColor.swift; sourceTree = "<group>"; };
-		0EC2926D288DA422002E3BEE /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 		0EC2927B288ECB9A002E3BEE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0EC2927E288ECE2E002E3BEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0EC29280288ECE3A002E3BEE /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0EC29282288EFC46002E3BEE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		0EC29285288EFD95002E3BEE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		0EC29287288F1FAB002E3BEE /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +123,11 @@
 			isa = PBXGroup;
 			children = (
 				0EC2924A288D59D5002E3BEE /* MainPageView.swift */,
-				0EC2925D288D6447002E3BEE /* TestPageView.swift */,
 				0EC2924C288D59F7002E3BEE /* CardView.swift */,
-				0EC2926D288DA422002E3BEE /* MockView.swift */,
 				0EC29282288EFC46002E3BEE /* DetailView.swift */,
+				0EC29287288F1FAB002E3BEE /* MockView.swift */,
+				0E23C8F0288F941600E7F4F5 /* OnboardingView.swift */,
+				0E23C8F4288FA20800E7F4F5 /* InitialPickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			children = (
 				0EC29269288D7157002E3BEE /* UserColor.swift */,
 				0EC2927B288ECB9A002E3BEE /* Card.swift */,
+				0E23C8EC288F8D9300E7F4F5 /* Onboarding.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,15 +232,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E23C8F5288FA20800E7F4F5 /* InitialPickerView.swift in Sources */,
 				0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */,
-				0EC2925E288D6447002E3BEE /* TestPageView.swift in Sources */,
 				0EC2924D288D59F7002E3BEE /* CardView.swift in Sources */,
 				0EC2926A288D7157002E3BEE /* UserColor.swift in Sources */,
+				0EC29288288F1FAB002E3BEE /* MockView.swift in Sources */,
 				0EC29283288EFC46002E3BEE /* DetailView.swift in Sources */,
+				0E23C8ED288F8D9300E7F4F5 /* Onboarding.swift in Sources */,
 				0EC2924B288D59D5002E3BEE /* MainPageView.swift in Sources */,
 				0EC29286288EFD95002E3BEE /* DetailViewModel.swift in Sources */,
-				0EC2926E288DA422002E3BEE /* MockView.swift in Sources */,
 				0EC29281288ECE3A002E3BEE /* Helpers.swift in Sources */,
+				0E23C8F1288F941600E7F4F5 /* OnboardingView.swift in Sources */,
 				0EC2927F288ECE2E002E3BEE /* Extensions.swift in Sources */,
 				0EC2927C288ECB9A002E3BEE /* Card.swift in Sources */,
 			);

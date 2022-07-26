@@ -24,7 +24,7 @@ struct MainPageView: View {
                     Text("Combi-ne It!")
                         .font(.custom("Ubuntu-Bold", size: 36))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 16)
+                        .padding(16)
                     
                     colors
                     
@@ -50,17 +50,16 @@ struct MainPageView: View {
                     }
                     .padding(.vertical)
                     
-                    Spacer(minLength: 200)
+//                    Spacer(minLength: 200)
                     
                 }
 //                .opacity(viewModel.showDetailPage ? 0 : 1)
             }
-            .background(Color("BGColor"))
             .foregroundStyle(Color("TextColor"))
             
             .background(alignment: .top) {
                 RoundedRectangle(cornerRadius: 15, style: .continuous)
-                    .fill(Color("CardColor"))
+                    .fill(Color("BGColor"))
                     .frame(height: viewModel.animateView ? nil : 350, alignment: .top)
                     .scaleEffect(viewModel.animateView ? 1 : 0.93)
                     .opacity(viewModel.animateView ? 1 : 0)

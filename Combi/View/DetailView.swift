@@ -2,149 +2,153 @@
 //  DetailView.swift
 //  Combi
 //
-//  Created by Kevin Harijanto on 24/07/22.
+//  Created by Kevin Harijanto on 25/07/22.
 //
 
 import SwiftUI
 
 struct DetailView: View {
-    var namespace: Namespace.ID
-    @Binding var show: Bool
+    var item: Card
     
+    //Hide status bar Properties
     @State private var hideStatusBar = true
     
-//    @Binding var userColor: UserColor
+    // User Color Properties
     @ObservedObject var userColor: UserColor
     
+    // Animation Properties
+    @ObservedObject var viewModel: DetailViewModel
+    var animation: Namespace.ID
+    
+    //Drag Gesture Properties
+    @State var scale: CGFloat = 1
+    
     var body: some View {
-        ZStack {
-            ScrollView(showsIndicators: false) {
-                cover
+        ScrollView(.vertical, showsIndicators: false) {
+            ZStack {
+                Rectangle()
+                    .fill(Color("CardColor"))
+                    .ignoresSafeArea()
                 
-                HStack {
-                    userColor.primaryColor
-                        .frame(height: 200)
-                    userColor.secondaryColor
-                        .frame(height: 200)
-                    userColor.accentColor
-                        .frame(height: 200)
-                }
-                .offset(x: 0, y: 100)
-                .padding()
-                
-                HStack {
-                    ColorPicker("",selection: $userColor.primaryColor, supportsOpacity: false)
-                        .labelsHidden()
+                VStack {
+                    CardView(item: item, animation: animation)
+                        .scaleEffect(viewModel.animateView ? 1 : 0.93)
                     
-                    ColorPicker("",selection: $userColor.secondaryColor, supportsOpacity: false)
-                        .labelsHidden()
+                    Divider()
                     
-                    ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
-                        .labelsHidden()
+                    VStack(spacing: 16) {
+                        HStack(spacing: 16) {
+                            Image(systemName: "person.circle")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                            
+                            Text("by Kevin Harijanto")
+                                .font(Font.custom("Ubuntu", size: 16))
+                                .foregroundColor(Color("TextColor"))
+                        }
+                        
+                        
+                        // ISI DISINI
+                        PagingView(config: .init(margin: 16, spacing: 10)) {
+                            Group {
+                                MockView(userColor: userColor)
+                                Rectangle()
+                                    .fill(userColor.secondaryColor)
+                                Rectangle()
+                                    .fill(userColor.accentColor)
+                            }
+                            .mask(RoundedRectangle(cornerRadius: 10))
+                        }
+                        .frame(minHeight: 690)
+                        
+                        Spacer()
+                            .frame(minHeight: 200)
+                    }
+                    .padding()
+                    .opacity(viewModel.animateContent ? 1 : 0)
+                    .scaleEffect(viewModel.animateView ? 1 : 0, anchor:  .top)
                 }
-                .offset(x: 0, y: 100)
-                .padding()
-                
-                Spacer(minLength: 200)
+                .scaleEffect(scale)
             }
-            .background(Color("BGColor"))
-            .ignoresSafeArea()
-            
-            
-            
+            .gesture(DragGesture(minimumDistance:0)
+                .onChanged(onChanged(value:))
+                .onEnded(onEnded(value:)))
+        }
+        .overlay(alignment: .topTrailing, content: {
             Button {
-                withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
-                    show.toggle()
+                 // Closing View
+                withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                    viewModel.animateView = false
+                    viewModel.animateContent = false
+                }
+                
+                withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7).delay(0.1)) {
+                    viewModel.currentItem = nil
+                    viewModel.showDetailPage = false
                 }
             } label: {
-                Image(systemName: "xmark")
-                    .font(.body.weight(.bold))
-                    .foregroundColor(.secondary)
-                    .padding(8)
-                    .background(.ultraThinMaterial, in: Circle())
+                Image(systemName: "xmark.circle.fill")
+                    .font(.title)
+                    .foregroundColor(Color("TextColor"))
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .padding(.horizontal,20)
-            .padding(.vertical, 50)
-            .ignoresSafeArea()
+            .padding()
+            .padding(.top, safeArea().top)
+            .offset(y: -30)
+            .opacity(viewModel.animateView ? 1 : 0)
+        })
+        .onAppear {
+            withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                viewModel.animateView = true
+            }
             
+            withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+                viewModel.animateContent = true
+            }
         }
+        .transition(.identity)
         .statusBar(hidden: hideStatusBar)
-        .environmentObject(userColor)
     }
     
-    var cover: some View {
-        VStack {
-            
+    func onChanged(value: DragGesture.Value) {
+        // calculating scale value by total height
+        let scale = value.translation.height / UIScreen.main.bounds.height
+
+        // if scale is 0.1, actual scale is 1 - 0.1 = 0.9
+        if 1 - scale > 0.7 {
+            self.scale = 1 - scale
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 500)
-        .foregroundStyle(Color("TextColor"))
-        .background(
-            Image("card1")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .matchedGeometryEffect(id: "background", in: namespace)
-        )
-        .mask (
-            RoundedRectangle(cornerRadius: 30, style: .continuous)
-                .matchedGeometryEffect(id: "mask", in: namespace)
-        )
-        .overlay(
-            VStack(alignment: .leading, spacing: 12) {
+    }
 
-                Text("Task Management App")
-                    .font(Font.custom("Ubuntu-Bold", size: 24))
-                    .matchedGeometryEffect(id: "title", in: namespace)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+    func onEnded(value: DragGesture.Value) {
 
-                Text("3 Screens")
-                    .font(Font.custom("Ubuntu-Medium", size: 12))
-                    .matchedGeometryEffect(id: "subtitle", in: namespace)
-                    .opacity(0.5)
-
-                Text("Task management concept app from Dribbble.")
-                    .font(Font.custom("Ubuntu", size: 12))
-                    .matchedGeometryEffect(id: "text", in: namespace)
-
-                Divider()
-
-                HStack {
-                    Image(systemName: "person")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                        .cornerRadius(10)
-                        .padding(8)
-                        .background(.ultraThinMaterial, in:
-                                        RoundedRectangle(cornerRadius: 18, style: .continuous))
-
-                    Text("Achmad Komarudin")
-                        .font(Font.custom("Ubuntu", size: 16))
-                }
+//        withAnimation(.spring()) {
+//            print("scale is \(scale)")
+//            if scale < 0.9 {
+//                viewModel.animateView = false
+//                viewModel.animateContent = false
+//                viewModel.currentItem = nil
+//                viewModel.showDetailPage = false
+//            }
+//            scale = 1
+//        }
+        
+        withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+            print("scale is \(scale)")
+            
+            if self.scale < 0.9 {
+                viewModel.animateView = false
+                viewModel.animateContent = false
+                viewModel.currentItem = nil
+                viewModel.showDetailPage = false
+                
             }
-                .padding(20)
-                .background(
-                    Rectangle()
-//                        .fill(Color("CardColor"))
-                        .fill(.ultraThinMaterial)
-                        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-//                        .blur(radius: 10)
-                        .matchedGeometryEffect(id: "blur", in: namespace)
-                        .shadow(color: Color("ShadowColor"), radius: 8, x: 0, y: 8)
-                )
-                .offset(y: 250)
-                .padding(20)
-
-        )
+            scale = 1
+        }
     }
 }
 
-
-struct DetailView_Previews: PreviewProvider {
-    @Namespace static var namespace
-    
-    
-    static var previews: some View {
-        DetailView(namespace: namespace, show: .constant(true), userColor: UserColor())
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailView(item: <#Card#>, detail: <#DetailViewModel#>, animation: <#Namespace.ID#>)
+//    }
+//}
