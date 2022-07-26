@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct InitialPickerView: View {
+    //App state properties
+    @EnvironmentObject var appState: AppState
+    // User Color
     @StateObject var userColor = UserColor()
     
     var body: some View {
@@ -89,6 +92,8 @@ struct InitialPickerView: View {
                 
                 VStack(spacing: 16) {
                     Button {
+                        appState.switchScene = .main
+                        // save custom color to core data?
                         
                     } label: {
                         Text("Get Started")
@@ -101,7 +106,7 @@ struct InitialPickerView: View {
                     
                     
                     Button {
-                        
+                        appState.switchScene = .main
                     } label: {
                         Text("Let me pick later.")
                             .font(Font.custom("Ubuntu", size: 20))
@@ -119,12 +124,13 @@ struct InitialPickerView: View {
             Spacer()
         }
         .foregroundStyle(Color("TextColor"))
+        .background(Color("BGColor"))
     }
 }
 
 struct InitialPickerView_Previews: PreviewProvider {
     static var previews: some View {
         InitialPickerView()
-//            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }

@@ -7,12 +7,13 @@
 
 import SwiftUI
 
+
 @main
 struct CombiApp: App {
+    
     var body: some Scene {
         WindowGroup {
-//            MainPageView()
-            OnboardingView()
+            CombiContentView()
         }
     }
 }

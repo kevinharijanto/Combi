@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MainPageView: View {
-    
-    @StateObject var userColor = UserColor()
-    
+    //App state properties
+    @EnvironmentObject var appState: AppState
+    //User Colors
+    @ObservedObject var userColor = UserColor()
+    //ViewModel
     @StateObject private var viewModel = DetailViewModel()
     
     //Matched Geometry Effect
@@ -56,7 +58,7 @@ struct MainPageView: View {
 //                .opacity(viewModel.showDetailPage ? 0 : 1)
             }
             .foregroundStyle(Color("TextColor"))
-            
+            .background(Color("BGColor"))
             .background(alignment: .top) {
                 RoundedRectangle(cornerRadius: 15, style: .continuous)
                     .fill(Color("BGColor"))

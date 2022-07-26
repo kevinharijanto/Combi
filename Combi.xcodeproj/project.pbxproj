@@ -10,6 +10,7 @@
 		0E23C8ED288F8D9300E7F4F5 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8EC288F8D9300E7F4F5 /* Onboarding.swift */; };
 		0E23C8F1288F941600E7F4F5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8F0288F941600E7F4F5 /* OnboardingView.swift */; };
 		0E23C8F5288FA20800E7F4F5 /* InitialPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8F4288FA20800E7F4F5 /* InitialPickerView.swift */; };
+		0E23C8F7288FB3CD00E7F4F5 /* CombiContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8F6288FB3CD00E7F4F5 /* CombiContentView.swift */; };
 		0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2923C288D59AB002E3BEE /* CombiApp.swift */; };
 		0EC29241288D59AB002E3BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29240288D59AB002E3BEE /* Assets.xcassets */; };
 		0EC29244288D59AB002E3BEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29243288D59AB002E3BEE /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		0E23C8EC288F8D9300E7F4F5 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		0E23C8F0288F941600E7F4F5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0E23C8F4288FA20800E7F4F5 /* InitialPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPickerView.swift; sourceTree = "<group>"; };
+		0E23C8F6288FB3CD00E7F4F5 /* CombiContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiContentView.swift; sourceTree = "<group>"; };
 		0EC29239288D59AB002E3BEE /* Combi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC2923C288D59AB002E3BEE /* CombiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiApp.swift; sourceTree = "<group>"; };
 		0EC29240288D59AB002E3BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				0EC29242288D59AB002E3BEE /* Preview Content */,
 				0EC29250288D5A1C002E3BEE /* Fonts */,
 				0EC2923C288D59AB002E3BEE /* CombiApp.swift */,
+				0E23C8F6288FB3CD00E7F4F5 /* CombiContentView.swift */,
 				0EC29240288D59AB002E3BEE /* Assets.xcassets */,
 			);
 			path = System;
@@ -243,6 +246,7 @@
 				0EC29286288EFD95002E3BEE /* DetailViewModel.swift in Sources */,
 				0EC29281288ECE3A002E3BEE /* Helpers.swift in Sources */,
 				0E23C8F1288F941600E7F4F5 /* OnboardingView.swift in Sources */,
+				0E23C8F7288FB3CD00E7F4F5 /* CombiContentView.swift in Sources */,
 				0EC2927F288ECE2E002E3BEE /* Extensions.swift in Sources */,
 				0EC2927C288ECB9A002E3BEE /* Card.swift in Sources */,
 			);

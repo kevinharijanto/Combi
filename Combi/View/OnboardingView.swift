@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    let transition: AnyTransition =
+        .asymmetric(
+            insertion: .move(edge: .trailing),
+            removal: .move(edge: .leading))
+    
+    //App state properties
+    @EnvironmentObject var appState: AppState
+    
+    // onboarding properties
     var onboardingItem = Onboarding.onboardingItem
     @State private var selection = 0
     
+    // change tab view indicator to black
    init() {
         UIPageControl.appearance().currentPageIndicatorTintColor = .black
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
@@ -51,6 +61,11 @@ struct OnboardingView: View {
                 withAnimation {
                     if selection < onboardingItem.count - 1 {
                         selection += 1
+                    }
+                    else {
+                        appState.switchScene = .initialpicker
+                        // push to initial picker
+                        
                     }
                 }
             } label: {
