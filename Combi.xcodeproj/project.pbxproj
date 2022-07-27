@@ -13,8 +13,6 @@
 		0E23C8F7288FB3CD00E7F4F5 /* CombiContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8F6288FB3CD00E7F4F5 /* CombiContentView.swift */; };
 		0E23C8FB289035F200E7F4F5 /* DetailPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8FA289035F200E7F4F5 /* DetailPage1.swift */; };
 		0E23C8FD2890361D00E7F4F5 /* CardView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8FC2890361D00E7F4F5 /* CardView1.swift */; };
-		0E23C9012890F58C00E7F4F5 /* CardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C9002890F58C00E7F4F5 /* CardView2.swift */; };
-		0E23C9032890F70500E7F4F5 /* DetailPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C9022890F70500E7F4F5 /* DetailPage2.swift */; };
 		0E23C90728919AC600E7F4F5 /* MockView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C90628919AC600E7F4F5 /* MockView2.swift */; };
 		0E23C9092891A7CF00E7F4F5 /* MockView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C9082891A7CF00E7F4F5 /* MockView1.swift */; };
 		0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2923C288D59AB002E3BEE /* CombiApp.swift */; };
@@ -39,8 +37,6 @@
 		0E23C8F6288FB3CD00E7F4F5 /* CombiContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiContentView.swift; sourceTree = "<group>"; };
 		0E23C8FA289035F200E7F4F5 /* DetailPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage1.swift; sourceTree = "<group>"; };
 		0E23C8FC2890361D00E7F4F5 /* CardView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView1.swift; sourceTree = "<group>"; };
-		0E23C9002890F58C00E7F4F5 /* CardView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView2.swift; sourceTree = "<group>"; };
-		0E23C9022890F70500E7F4F5 /* DetailPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage2.swift; sourceTree = "<group>"; };
 		0E23C90628919AC600E7F4F5 /* MockView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView2.swift; sourceTree = "<group>"; };
 		0E23C9082891A7CF00E7F4F5 /* MockView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView1.swift; sourceTree = "<group>"; };
 		0EC29239288D59AB002E3BEE /* Combi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,9 +133,7 @@
 				0E23C8F4288FA20800E7F4F5 /* InitialPickerView.swift */,
 				0EC2924A288D59D5002E3BEE /* MainPageView.swift */,
 				0E23C8FC2890361D00E7F4F5 /* CardView1.swift */,
-				0E23C9002890F58C00E7F4F5 /* CardView2.swift */,
 				0E23C8FA289035F200E7F4F5 /* DetailPage1.swift */,
-				0E23C9022890F70500E7F4F5 /* DetailPage2.swift */,
 				0EC29287288F1FAB002E3BEE /* MockView.swift */,
 				0E23C9082891A7CF00E7F4F5 /* MockView1.swift */,
 				0E23C90628919AC600E7F4F5 /* MockView2.swift */,
@@ -248,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E23C8F5288FA20800E7F4F5 /* InitialPickerView.swift in Sources */,
-				0E23C9012890F58C00E7F4F5 /* CardView2.swift in Sources */,
 				0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */,
 				0EC2926A288D7157002E3BEE /* UserColor.swift in Sources */,
 				0EC29288288F1FAB002E3BEE /* MockView.swift in Sources */,
@@ -263,7 +256,6 @@
 				0E23C8F7288FB3CD00E7F4F5 /* CombiContentView.swift in Sources */,
 				0E23C90728919AC600E7F4F5 /* MockView2.swift in Sources */,
 				0EC2927F288ECE2E002E3BEE /* Extensions.swift in Sources */,
-				0E23C9032890F70500E7F4F5 /* DetailPage2.swift in Sources */,
 				0EC2927C288ECB9A002E3BEE /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

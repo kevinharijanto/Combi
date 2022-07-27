@@ -73,10 +73,3 @@ struct CardView1: View {
     
     
 }
-
-//struct CardViewDummy_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainPageDummy()
-////            .preferredColorScheme(.dark)
-//    }
-//}

@@ -49,15 +49,6 @@ struct MockView: View {
                             .fill(userColor.primaryColor)
                             .frame(width: 348, height: 162)
                         
-                        //                        Circle()
-                        //                            .strokeBorder(userColor.accentColor.opacity(0.2), lineWidth: 3)
-                        //                            .frame(width: 72, height: 72)
-                        //                            .offset(x: -150, y: -60)
-                        //
-                        //                        Circle()
-                        //                            .strokeBorder(userColor.accentColor.opacity(0.2), lineWidth: 3)
-                        //                            .frame(width: 26, height: 26)
-                        //                            .offset(x: -150, y: -60)
                         
                         VStack(alignment: .leading, spacing: 0) {
                             Text("Great, your today's plan almost done")

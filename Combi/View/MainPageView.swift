@@ -48,9 +48,6 @@ struct MainPageView: View {
                 CardView1(viewModel: viewModel, animation: animation)
                     .shadow(color: Color("ShadowColor").opacity(0.3), radius: 10, x: 0, y: 4)
                 
-//                CardView2(viewModel: viewModel, animation: animation)
-//                    .shadow(color: Color("ShadowColor").opacity(0.5), radius: 10, x: 0, y: 8)
-                
                 Spacer(minLength: 10)
                 
                 Text("by Kevin Harijanto")
@@ -65,10 +62,6 @@ struct MainPageView: View {
         .overlay {
             if viewModel.showDetailPage1 {
                 DetailPage1(viewModel: viewModel, animation: animation)
-            }
-            
-            if viewModel.showDetailPage2 {
-                DetailPage2(viewModel: viewModel, animation: animation)
             }
         }
             
