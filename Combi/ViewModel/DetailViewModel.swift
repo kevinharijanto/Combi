@@ -8,12 +8,8 @@
 import SwiftUI
 
 class DetailViewModel: ObservableObject {
+
+    @Published var showDetailPage1: Bool = false
+    @Published var showDetailPage2: Bool = false
     
-    //Animation Properties
-    @Published var currentItem: Card?
-    @Published var showDetailPage: Bool = false
-    
-    //Detail Animation Properties
-    @Published var animateView: Bool = false
-    @Published var animateContent: Bool = false
 }

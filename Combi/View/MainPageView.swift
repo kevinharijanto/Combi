@@ -11,7 +11,7 @@ struct MainPageView: View {
     //App state properties
     @EnvironmentObject var appState: AppState
     //User Colors
-    @ObservedObject var userColor = UserColor()
+    @EnvironmentObject var userColor: UserColor
     //ViewModel
     @StateObject private var viewModel = DetailViewModel()
     
@@ -35,42 +35,25 @@ struct MainPageView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 16)
                     
-                    VStack(spacing: 0) {
-                        ForEach(cardItems) { item in
-                            Button {
-                                withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
-                                    viewModel.currentItem = item
-                                    viewModel.showDetailPage = true
-                                }
-                            } label: {
-                                CardView(item: item, animation: animation)
-                                    .scaleEffect(viewModel.currentItem?.id == item.id && viewModel.showDetailPage ? 1 : 0.93)
-                            }
-                            .buttonStyle(ScaledButtonStyle())
-                            .opacity(viewModel.showDetailPage ? (viewModel.currentItem?.id == item.id ? 1 : 0) : 1)
-                        }
-                    }
-                    .padding(.vertical)
+                    CardView1(viewModel: viewModel, animation: animation)
+                        .shadow(color: Color("ShadowColor").opacity(0.5), radius: 10, x: 0, y: 8)
                     
-//                    Spacer(minLength: 200)
+                    CardView2(viewModel: viewModel, animation: animation)
+                        .shadow(color: Color("ShadowColor").opacity(0.5), radius: 10, x: 0, y: 8)
+                    
+                    Spacer(minLength: 500)
                     
                 }
-//                .opacity(viewModel.showDetailPage ? 0 : 1)
             }
             .foregroundStyle(Color("TextColor"))
             .background(Color("BGColor"))
-            .background(alignment: .top) {
-                RoundedRectangle(cornerRadius: 15, style: .continuous)
-                    .fill(Color("BGColor"))
-                    .frame(height: viewModel.animateView ? nil : 350, alignment: .top)
-                    .scaleEffect(viewModel.animateView ? 1 : 0.93)
-                    .opacity(viewModel.animateView ? 1 : 0)
-                    .ignoresSafeArea()
-            }
             .overlay {
-                if let currentItem = viewModel.currentItem, viewModel.showDetailPage {
-                    DetailView(item: currentItem, userColor: userColor, viewModel: viewModel, animation: animation)
-                        .ignoresSafeArea(.container, edges: .top)
+                if viewModel.showDetailPage1 {
+                    DetailPage1(viewModel: viewModel, animation: animation)
+                }
+                
+                if viewModel.showDetailPage2 {
+                    DetailPage2(viewModel: viewModel, animation: animation)
                 }
             }
     }
@@ -153,8 +136,9 @@ struct MainPageView: View {
 
 struct MainPageView_Previews: PreviewProvider {
     
+    
     static var previews: some View {
-        MainPageView()
+        CombiContentView()
             .preferredColorScheme(.dark)
     }
 }

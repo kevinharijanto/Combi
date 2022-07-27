@@ -11,7 +11,7 @@ struct InitialPickerView: View {
     //App state properties
     @EnvironmentObject var appState: AppState
     // User Color
-    @StateObject var userColor = UserColor()
+    @EnvironmentObject var userColor: UserColor
     
     var body: some View {
         VStack(spacing: 21) {
@@ -130,7 +130,7 @@ struct InitialPickerView: View {
 
 struct InitialPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        InitialPickerView()
+        CombiContentView()
             .preferredColorScheme(.dark)
     }
 }

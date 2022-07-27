@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 enum CurrentView: Int {
     case onboarding
     case initialpicker
@@ -17,12 +16,13 @@ enum CurrentView: Int {
 // Define observable
 class AppState: ObservableObject {
 //    @AppStorage("scene") var switchScene = CurrentView.onboarding
-    // warna di initial picker blm nyambung
-    @Published var switchScene = CurrentView.initialpicker
+    @Published var switchScene = CurrentView.main
 }
 
+
 struct CombiContentView: View {
-    @ObservedObject var appState = AppState()
+    @StateObject var appState = AppState()
+    @StateObject var userColor = UserColor()
     
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
     
@@ -37,12 +37,15 @@ struct CombiContentView: View {
             case .initialpicker:
                 InitialPickerView()
                     .environmentObject(appState)
+                    .environmentObject(userColor)
                     .transition(transition)
                 
             case .main:
                 MainPageView()
                     .environmentObject(appState)
+                    .environmentObject(userColor)
                     .transition(transition)
+                
             }
         }
         .animation(.default, value: appState.switchScene)

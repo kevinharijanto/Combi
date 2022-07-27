@@ -35,3 +35,20 @@ extension Color {
     static let combiLightBlue = Color(UIColor(rgb: 0xDCE5FF))
 }
 
+// fill and border in shape
+extension Shape {
+    func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
+        self
+            .stroke(strokeStyle, lineWidth: lineWidth)
+            .background(self.fill(fillStyle))
+    }
+}
+
+extension InsettableShape {
+    func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
+        self
+            .strokeBorder(strokeStyle, lineWidth: lineWidth)
+            .background(self.fill(fillStyle))
+    }
+}
+
