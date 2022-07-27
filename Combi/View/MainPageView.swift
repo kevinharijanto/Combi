@@ -22,11 +22,13 @@ struct MainPageView: View {
         
         ScrollView(.vertical, showsIndicators: false) {
             
-            VStack(spacing: 16) {
+            VStack(spacing: 20) {
+                Spacer(minLength: 10)
+                
                 Text("Combi-ne It!")
                     .font(.custom("Ubuntu-Bold", size: 36))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(16)
+                    .padding(.horizontal, 16)
                 
                 colors
                 
@@ -36,7 +38,7 @@ struct MainPageView: View {
                     .padding(.horizontal, 16)
                 
                 contrast
-                    .shadow(color: Color("ShadowColor").opacity(0.5), radius: 10, x: 0, y: 8)
+                    .shadow(color: Color("ShadowColor").opacity(0.3), radius: 10, x: 0, y: 4)
                 
                 Text("Views")
                     .font(Font.custom("Ubuntu-Bold", size: 36))
@@ -44,12 +46,17 @@ struct MainPageView: View {
                     .padding(.horizontal, 16)
                 
                 CardView1(viewModel: viewModel, animation: animation)
-                    .shadow(color: Color("ShadowColor").opacity(0.5), radius: 10, x: 0, y: 8)
+                    .shadow(color: Color("ShadowColor").opacity(0.3), radius: 10, x: 0, y: 4)
                 
-                CardView2(viewModel: viewModel, animation: animation)
-                    .shadow(color: Color("ShadowColor").opacity(0.5), radius: 10, x: 0, y: 8)
+//                CardView2(viewModel: viewModel, animation: animation)
+//                    .shadow(color: Color("ShadowColor").opacity(0.5), radius: 10, x: 0, y: 8)
                 
-                Spacer(minLength: 200)
+                Spacer(minLength: 10)
+                
+                Text("by Kevin Harijanto")
+                    .font(Font.custom("Ubuntu", size: 16))
+                    .padding()
+                
                 
             }
         }
@@ -71,10 +78,9 @@ struct MainPageView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .fill(Color("CardColor"))
-            //                .frame(width: 358, height: 160, alignment: .center)
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 16)
-                .shadow(color: Color("ShadowColor").opacity(0.5), radius: 10, x: 0, y: 8)
+                .shadow(color: Color("ShadowColor").opacity(0.3), radius: 10, x: 0, y: 4)
             
             HStack(spacing: 20) {
                 

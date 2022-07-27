@@ -16,6 +16,8 @@ struct InitialPickerView: View {
     var body: some View {
         VStack(spacing: 21) {
             Image("Onboarding3")
+                .resizable()
+                .scaledToFit()
             
             VStack(spacing: 5) {
                 Text("Define Your Vibe!")
@@ -25,7 +27,7 @@ struct InitialPickerView: View {
                     .font(Font.custom("Ubuntu-Medium", size: 20))
             }
             
-            VStack(spacing:34) {
+            VStack(spacing:UIScreen.main.bounds.height / 20) {
                 HStack(spacing: 20) {
                     
                     VStack(spacing: 20) {
@@ -124,7 +126,7 @@ struct InitialPickerView: View {
             Spacer()
         }
         .foregroundStyle(Color("TextColor"))
-        .background(Color("BGColor"))
+//        .background(Color("BGColor"))
     }
 }
 

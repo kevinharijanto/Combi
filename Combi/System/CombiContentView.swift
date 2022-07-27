@@ -15,8 +15,8 @@ enum CurrentView: Int {
 
 // Define observable
 class AppState: ObservableObject {
-//    @AppStorage("scene") var switchScene = CurrentView.onboarding
-    @Published var switchScene = CurrentView.main
+    @AppStorage("scene") var switchScene = CurrentView.onboarding
+//    @Published var switchScene = CurrentView.main
 }
 
 

@@ -35,7 +35,7 @@ struct OnboardingView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                         
-                        VStack(spacing: 16) {
+                        VStack(spacing: 24) {
                             Text(onboardingItem[item].title)
                                 .font(Font.custom("Ubuntu-Bold", size: 36))
                                 .multilineTextAlignment(.center)
@@ -52,10 +52,11 @@ struct OnboardingView: View {
                     .tag(item)
                 }
             }
-            .frame(height: UIScreen.main.bounds.height-160)
+            .frame(width: UIScreen.main.bounds.width)
+//            .padding(.bottom, UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 > 20 ? 0 : 20)
             .foregroundStyle(Color("TextColor"))
-            .tabViewStyle(.page(indexDisplayMode: .always))
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            .tabViewStyle(.page(indexDisplayMode: .never))
+//            .indexViewStyle(.page(backgroundDisplayMode: .automatic))
             
             Button {
                 withAnimation {
@@ -101,6 +102,8 @@ struct OnboardingView: View {
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView()
+        OnboardingView()
+            .previewDevice("iPhone 13 Pro Max")
 //            .preferredColorScheme(.dark)
     }
 }

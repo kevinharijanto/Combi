@@ -33,6 +33,21 @@ extension Color {
     static let combiPurple = Color(UIColor(rgb: 0x6E62E5))
     static let combiPink = Color(UIColor(rgb: 0xFFC1C2))
     static let combiLightBlue = Color(UIColor(rgb: 0xDCE5FF))
+    
+    var components: (red: CGFloat, green: CGFloat, blue: CGFloat, opacity: CGFloat) {
+        
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var o: CGFloat = 0
+        
+        guard UIColor(self).getRed(&r, green: &g, blue: &b, alpha: &o) else {
+            // You can handle the failure here as you want
+            return (0, 0, 0, 0)
+        }
+        
+        return (r, g, b, o)
+    }
 }
 
 // fill and border in shape
@@ -49,6 +64,34 @@ extension InsettableShape {
         self
             .strokeBorder(strokeStyle, lineWidth: lineWidth)
             .background(self.fill(fillStyle))
+    }
+}
+
+// Extension for storing color to userdefaults
+extension Color: RawRepresentable {
+
+    public init?(rawValue: String) {
+        guard let data = Data(base64Encoded: rawValue) else{
+            self = .black
+            return
+        }
+        
+        do{
+            let color = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? UIColor ?? .black
+            self = Color(color)
+        }catch{
+            self = .black
+        }
+    }
+
+    public var rawValue: String {
+        do{
+            let data = try NSKeyedArchiver.archivedData(withRootObject: UIColor(self), requiringSecureCoding: false) as Data
+            return data.base64EncodedString()
+        }catch{
+            
+            return ""
+        }
     }
 }
 

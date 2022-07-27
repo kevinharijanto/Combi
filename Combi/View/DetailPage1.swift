@@ -19,103 +19,103 @@ struct DetailPage1: View {
     //Drag Gesture Properties
     @State var scale: CGFloat = 1
     
+    @Environment(\.colorScheme) var colorScheme
     @State var openButton = false
     
     var item = cardItems[0]
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            
-            VStack {
-                ZStack(alignment: .top) {
-                    // content
-                    VStack {
-                        Spacer(minLength: 350)
-
-                        Divider()
-
-                        HStack(spacing: 16) {
-                            Image(systemName: "person.circle")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-
-                            Text("by Kevin Harijanto")
-                                .font(Font.custom("Ubuntu", size: 16))
-                                .foregroundColor(Color("TextColor"))
-                        }
-
-                        PagingView(config: .init(margin: 32, spacing: 16)) {
-                            Group {
-        //                        MockView(userColor: userColor)
-        //
-                               Rectangle()
-                                    .fill(userColor.secondaryColor)
-                                    .frame(width: 332,height: 700)
-                                
-                                Rectangle()
-                                    .fill(userColor.accentColor)
-                                    .frame(width: 332,height: 700)
-                            }
-                            .mask(RoundedRectangle(cornerRadius: 15))
-                            .background(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .stroke(lineWidth: 3)
-                                    .opacity(0.2)
-                                    .frame(width: 332, height: 700)
-                            )
-                        }
-                        .frame(minHeight: 710)
-
-                        Spacer(minLength: 1000)
-                    }
-                    .zIndex(0)
-                    
-                    // card view
-                    VStack(alignment: .leading, spacing: 0) {
-                        Image(item.artwork)
+            VStack(alignment: .center, spacing: 16) {
+                Image(item.artwork)
+                    .resizable()
+                    .scaledToFill()
+                    .matchedGeometryEffect(id: "artwork1", in: animation)
+                    .frame(width: UIScreen.main.bounds.width, height: 358, alignment: .top)
+                
+                HStack(spacing: 12) {
+                    Image(item.logo)
                         .resizable()
-                        .scaledToFill()
-                        .matchedGeometryEffect(id: "artwork1", in: animation)
-                        .frame(width: UIScreen.main.bounds.width, height: 280, alignment: .top)
-                        
-                        
-                            
-                        HStack(spacing: 12) {
-                            Image(item.logo)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .matchedGeometryEffect(id: "logo1", in: animation)
-                                .frame(width: 46, height: 46)
-                            
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text(item.cardTitle)
-                                    .font(Font.custom("Ubuntu-Bold", size: 18))
-                                    .matchedGeometryEffect(id: "title1", in: animation)
-                                
-                                Text(item.cardScreens)
-                                    .font(Font.custom("Ubuntu-Medium", size: 12))
-                                    .opacity(0.4)
-                                    .matchedGeometryEffect(id: "subtitle1", in: animation)
-                            }
-                            .foregroundStyle(Color("TextColor"))
-                        }
-                        .padding(.horizontal, 16)
-                        .frame(width:UIScreen.main.bounds.width, height: 80, alignment: .leading)
-                    }
-                    .zIndex(1)
+                        .aspectRatio(contentMode: .fill)
+                        .matchedGeometryEffect(id: "logo1", in: animation)
+                        .frame(width: 46, height: 46)
                     
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(item.cardTitle)
+                            .font(Font.custom("Ubuntu-Bold", size: 18))
+                            .matchedGeometryEffect(id: "title1", in: animation)
+                        
+                        Text(item.cardScreens)
+                            .font(Font.custom("Ubuntu-Medium", size: 12))
+                            .opacity(0.4)
+                            .matchedGeometryEffect(id: "subtitle1", in: animation)
+                    }
+                    .foregroundStyle(Color("TextColor"))
                 }
+                .padding(.horizontal, 20)
+                .frame(width:UIScreen.main.bounds.width, height: 80, alignment: .leading)
+                
+                Divider()
+                
+//                Spacer()
+                
+                HStack {
+                    Spacer()
+                    Link(destination: URL(string: "https://dribbble.com/shots/17219653-Task-Management-App")!) {
+                        Image(systemName: "link.circle.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(Color("TextColor"))
+                    }
+                    
+                    Spacer()
+                }
+                .padding(.horizontal, 16)
+                
+                HStack(spacing: 16) {
+                    Spacer()
+
+                    Text("Original Design by Achmad Qomarudin")
+                        .font(Font.custom("Ubuntu", size: 16))
+                        .foregroundColor(Color("TextColor"))
+                    
+                    Spacer()
+                }
+                
+                Text("Mock Views")
+                    .font(Font.custom("Ubuntu-Bold", size: 36))
+                    .foregroundColor(Color("TextColor"))
+
+                PagingView(config: .init(margin: 64, spacing:64)) {
+                    Group {
+                        MockView1(userColor: userColor)
+                            .scaleEffect(0.8)
+                            .frame(width: 312, height: 675)
+                        MockView2(userColor: userColor)
+                            .scaleEffect(0.8)
+                            .frame(width: 312, height: 675)
+                    }
+                    .mask(RoundedRectangle(cornerRadius: 15))
+                    .background(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(lineWidth: 3)
+                            .opacity(0.2)
+                            .frame(width: 312, height: 675)
+                    )
+                }
+                .frame(minWidth: 390, minHeight: 700)
+                
+                Spacer(minLength: 100)
             }
         }
-        .scaleEffect(scale)
-        .gesture(DragGesture(minimumDistance:0)
-                        .onChanged(onChanged(value:))
-                        .onEnded(onEnded(value:)))
+//        .scaleEffect(scale)
+//        .gesture(DragGesture(minimumDistance:0)
+//                        .onChanged(onChanged(value:))
+//                        .onEnded(onEnded(value:)))
         .statusBar(hidden: hideStatusBar)
         .ignoresSafeArea()
         .background {
             Color("CardColor")
-                .matchedGeometryEffect(id: "background1", in: animation)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
         }
@@ -174,14 +174,21 @@ struct DetailPage1: View {
                                 openButton.toggle()
                             }
                         } label: {
-                            Image("FloatingMenu")
-                                .rotationEffect(.degrees(openButton ? 180 : 0))
-                                .saturation(openButton ? 0 : 1)
+                            if colorScheme == .dark {
+                                Image("FloatingMenuLight")
+                                    .rotationEffect(.degrees(openButton ? 180 : 0))
+                                    .saturation(openButton ? 0 : 1)
+                            } else {
+                                Image("FloatingMenu")
+                                    .rotationEffect(.degrees(openButton ? 180 : 0))
+                                    .saturation(openButton ? 0 : 1)
+                            }
                         }
-                        .background(Color.combiGray)
+                        .background(Color("TextColor"))
                         .mask(Circle())
                         .shadow(color: Color("ShadowColor"), radius: 10, x: 0, y: 0)
                         .opacity(viewModel.showDetailPage1 ? 1 : 0)
+                        .padding(.bottom, UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 > 20 ? 0 : 20)
                     }
                     
                     Spacer()
@@ -213,6 +220,6 @@ struct DetailPage1: View {
 struct DetailPageDummy_Previews: PreviewProvider {
     static var previews: some View {
         CombiContentView()
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }

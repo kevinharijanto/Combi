@@ -8,7 +8,7 @@
 import SwiftUI
 
 class UserColor: ObservableObject {
-    @Published var primaryColor : Color = Color(UIColor(rgb: 0x1B4A5A))
-    @Published var secondaryColor : Color = Color(UIColor(rgb: 0xFFFFFF))
-    @Published var accentColor : Color = Color(UIColor(rgb: 0xFFB057))
+    @AppStorage("primaryColor") var primaryColor : Color = Color(UIColor(rgb: 0x1B4A5A))
+    @AppStorage("secondaryColor") var secondaryColor : Color = Color(UIColor(rgb: 0xFFB057))
+    @AppStorage("accentColor") var accentColor : Color = Color(UIColor(rgb: 0xFFFFFF))
 }
