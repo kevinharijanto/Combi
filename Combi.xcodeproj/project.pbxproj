@@ -15,6 +15,7 @@
 		0E23C8FD2890361D00E7F4F5 /* CardView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8FC2890361D00E7F4F5 /* CardView1.swift */; };
 		0E23C9012890F58C00E7F4F5 /* CardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C9002890F58C00E7F4F5 /* CardView2.swift */; };
 		0E23C9032890F70500E7F4F5 /* DetailPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C9022890F70500E7F4F5 /* DetailPage2.swift */; };
+		0E23C9052891051E00E7F4F5 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C9042891051E00E7F4F5 /* FloatingButton.swift */; };
 		0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2923C288D59AB002E3BEE /* CombiApp.swift */; };
 		0EC29241288D59AB002E3BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29240288D59AB002E3BEE /* Assets.xcassets */; };
 		0EC29244288D59AB002E3BEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29243288D59AB002E3BEE /* Preview Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		0E23C8FC2890361D00E7F4F5 /* CardView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView1.swift; sourceTree = "<group>"; };
 		0E23C9002890F58C00E7F4F5 /* CardView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView2.swift; sourceTree = "<group>"; };
 		0E23C9022890F70500E7F4F5 /* DetailPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage2.swift; sourceTree = "<group>"; };
+		0E23C9042891051E00E7F4F5 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		0EC29239288D59AB002E3BEE /* Combi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC2923C288D59AB002E3BEE /* CombiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiApp.swift; sourceTree = "<group>"; };
 		0EC29240288D59AB002E3BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				0E23C8FA289035F200E7F4F5 /* DetailPage1.swift */,
 				0E23C9022890F70500E7F4F5 /* DetailPage2.swift */,
 				0EC29287288F1FAB002E3BEE /* MockView.swift */,
+				0E23C9042891051E00E7F4F5 /* FloatingButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E23C8F5288FA20800E7F4F5 /* InitialPickerView.swift in Sources */,
+				0E23C9052891051E00E7F4F5 /* FloatingButton.swift in Sources */,
 				0E23C9012890F58C00E7F4F5 /* CardView2.swift in Sources */,
 				0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */,
 				0EC2926A288D7157002E3BEE /* UserColor.swift in Sources */,

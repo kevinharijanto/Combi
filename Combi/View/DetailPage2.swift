@@ -19,6 +19,8 @@ struct DetailPage2: View {
     //Drag Gesture Properties
     @State var scale: CGFloat = 1
     
+    @State var openButton = false
+    
     var item = cardItems[1]
     
     var body: some View {
@@ -70,8 +72,6 @@ struct DetailPage2: View {
                     .scaledToFill()
                     .matchedGeometryEffect(id: "artwork2", in: animation)
                     .frame(width: UIScreen.main.bounds.width, height: 280, alignment: .top)
-                    .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 15))
-                    
                         
                     HStack(spacing: 12) {
                         Image(item.logo)
@@ -110,19 +110,74 @@ struct DetailPage2: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
         }
-        .overlay(alignment: .topTrailing) {
-            Button {
-                withAnimation(.spring()) {
-                    viewModel.showDetailPage2.toggle()
+        .overlay {
+            VStack {
+                // Close Button
+                HStack {
+                    Spacer()
+                    Button {
+                        withAnimation(.spring()) {
+                            viewModel.showDetailPage2.toggle()
+                        }
+
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title)
+                            .foregroundColor(Color("TextColor"))
+                    }
+                    .padding()
+                .opacity(viewModel.showDetailPage2 ? 1 : 0)
                 }
-               
-            } label: {
-                Image(systemName: "xmark.circle.fill")
-                    .font(.title)
-                    .foregroundColor(Color("TextColor"))
+                
+                Spacer()
+                
+                // Floating Button
+                HStack {
+                    Spacer()
+                    
+                    VStack {
+                        // Color Picker
+                        HStack(spacing: 0) {
+                            ColorPicker("",selection: $userColor.primaryColor, supportsOpacity: false)
+                                .labelsHidden()
+                                .padding()
+                                .scaleEffect(CGSize(width: 1.5, height: 1.5))
+                                .opacity(openButton ? 1 : 0)
+                                .offset(y: 20)
+                            
+                            ColorPicker("",selection: $userColor.secondaryColor, supportsOpacity: false)
+                                .labelsHidden()
+                                .padding()
+                                .scaleEffect(CGSize(width: 1.5, height: 1.5))
+                                .opacity(openButton ? 1 : 0)
+                            
+                            ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
+                                .labelsHidden()
+                                .padding()
+                                .scaleEffect(CGSize(width: 1.5, height: 1.5))
+                                .opacity(openButton ? 1 : 0)
+                                .offset(y: 20)
+                        }
+                        
+                        // Actual Button
+                        Button {
+                            withAnimation(.spring()) {
+                                openButton.toggle()
+                            }
+                        } label: {
+                            Image("FloatingMenu")
+                                .rotationEffect(.degrees(openButton ? 180 : 0))
+                                .saturation(openButton ? 0 : 1)
+                        }
+                        .background(Color.combiGray)
+                        .mask(Circle())
+                        .shadow(color: Color("ShadowColor"), radius: 10, x: 0, y: 0)
+                        .opacity(viewModel.showDetailPage2 ? 1 : 0)
+                    }
+                    
+                    Spacer()
+                }
             }
-            .padding()
-            .opacity(viewModel.showDetailPage2 ? 1 : 0)
         }
     }
     func onChanged(value: DragGesture.Value) {
@@ -130,7 +185,7 @@ struct DetailPage2: View {
         let scaleHere = value.translation.height / UIScreen.main.bounds.height
 
         // if scale is 0.1, actual scale is 1 - 0.1 = 0.9
-        if 1 - scaleHere > 0.8 {
+        if 1 - scaleHere > 0.8 && scaleHere > 0 {
             self.scale = 1 - scaleHere
         }
     }

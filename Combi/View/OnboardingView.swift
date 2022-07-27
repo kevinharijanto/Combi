@@ -15,7 +15,7 @@ struct OnboardingView: View {
     
     //App state properties
     @EnvironmentObject var appState: AppState
-    
+
     // onboarding properties
     var onboardingItem = Onboarding.onboardingItem
     @State private var selection = 0
@@ -65,7 +65,6 @@ struct OnboardingView: View {
                     else {
                         appState.switchScene = .initialpicker
                         // push to initial picker
-                        
                     }
                 }
             } label: {

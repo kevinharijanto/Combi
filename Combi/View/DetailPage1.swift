@@ -19,6 +19,8 @@ struct DetailPage1: View {
     //Drag Gesture Properties
     @State var scale: CGFloat = 1
     
+    @State var openButton = false
+    
     var item = cardItems[0]
     
     var body: some View {
@@ -42,23 +44,27 @@ struct DetailPage1: View {
                                 .foregroundColor(Color("TextColor"))
                         }
 
-                        PagingView(config: .init(margin: 20, spacing: 10)) {
+                        PagingView(config: .init(margin: 32, spacing: 16)) {
                             Group {
         //                        MockView(userColor: userColor)
         //
-                                Rectangle()
+                               Rectangle()
                                     .fill(userColor.secondaryColor)
+                                    .frame(width: 332,height: 700)
+                                
                                 Rectangle()
                                     .fill(userColor.accentColor)
+                                    .frame(width: 332,height: 700)
                             }
-                            .mask(RoundedRectangle(cornerRadius: 10))
+                            .mask(RoundedRectangle(cornerRadius: 15))
                             .background(
-                                RoundedRectangle(cornerRadius: 10)
+                                RoundedRectangle(cornerRadius: 15)
                                     .stroke(lineWidth: 3)
-                                    .opacity(0.3)
+                                    .opacity(0.2)
+                                    .frame(width: 332, height: 700)
                             )
                         }
-                        .frame(minHeight: 700)
+                        .frame(minHeight: 710)
 
                         Spacer(minLength: 1000)
                     }
@@ -71,7 +77,7 @@ struct DetailPage1: View {
                         .scaledToFill()
                         .matchedGeometryEffect(id: "artwork1", in: animation)
                         .frame(width: UIScreen.main.bounds.width, height: 280, alignment: .top)
-                        .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 15))
+                        
                         
                             
                         HStack(spacing: 12) {
@@ -113,19 +119,74 @@ struct DetailPage1: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea()
         }
-        .overlay(alignment: .topTrailing) {
-            Button {
-                withAnimation(.spring()) {
-                    viewModel.showDetailPage1.toggle()
+        .overlay {
+            VStack {
+                // Close Button
+                HStack {
+                    Spacer()
+                    Button {
+                        withAnimation(.spring()) {
+                            viewModel.showDetailPage1.toggle()
+                        }
+
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title)
+                            .foregroundColor(Color("TextColor"))
+                    }
+                    .padding()
+                .opacity(viewModel.showDetailPage1 ? 1 : 0)
                 }
-               
-            } label: {
-                Image(systemName: "xmark.circle.fill")
-                    .font(.title)
-                    .foregroundColor(Color("TextColor"))
+                
+                Spacer()
+                
+                // Floating Button
+                HStack {
+                    Spacer()
+                    
+                    VStack {
+                        // Color Picker
+                        HStack(spacing: 0) {
+                            ColorPicker("",selection: $userColor.primaryColor, supportsOpacity: false)
+                                .labelsHidden()
+                                .padding()
+                                .scaleEffect(CGSize(width: 1.5, height: 1.5))
+                                .opacity(openButton ? 1 : 0)
+                                .offset(y: 20)
+                            
+                            ColorPicker("",selection: $userColor.secondaryColor, supportsOpacity: false)
+                                .labelsHidden()
+                                .padding()
+                                .scaleEffect(CGSize(width: 1.5, height: 1.5))
+                                .opacity(openButton ? 1 : 0)
+                            
+                            ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
+                                .labelsHidden()
+                                .padding()
+                                .scaleEffect(CGSize(width: 1.5, height: 1.5))
+                                .opacity(openButton ? 1 : 0)
+                                .offset(y: 20)
+                        }
+                        
+                        // Actual Button
+                        Button {
+                            withAnimation(.spring()) {
+                                openButton.toggle()
+                            }
+                        } label: {
+                            Image("FloatingMenu")
+                                .rotationEffect(.degrees(openButton ? 180 : 0))
+                                .saturation(openButton ? 0 : 1)
+                        }
+                        .background(Color.combiGray)
+                        .mask(Circle())
+                        .shadow(color: Color("ShadowColor"), radius: 10, x: 0, y: 0)
+                        .opacity(viewModel.showDetailPage1 ? 1 : 0)
+                    }
+                    
+                    Spacer()
+                }
             }
-            .padding()
-            .opacity(viewModel.showDetailPage1 ? 1 : 0)
         }
     }
     
@@ -134,7 +195,7 @@ struct DetailPage1: View {
         let scaleHere = value.translation.height / UIScreen.main.bounds.height
 
         // if scale is 0.1, actual scale is 1 - 0.1 = 0.9
-        if 1 - scaleHere > 0.8 {
+        if 1 - scaleHere > 0.8 && scaleHere > 0 {
             self.scale = 1 - scaleHere
         }
     }

@@ -34,14 +34,14 @@ struct CardView1: View {
                     .resizable()
                     .scaledToFill()
                     .matchedGeometryEffect(id: "artwork1", in: animation)
-                    .frame(width: UIScreen.main.bounds.width - 24, height: 200, alignment: .top)
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 200, alignment: .top)
                     .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 15))
                 
                 ZStack {
                     
                     Color("CardColor")
                         .matchedGeometryEffect(id: "background1", in: animation)
-                        .frame(width: UIScreen.main.bounds.width - 24, height: 80)
+                        .frame(width: UIScreen.main.bounds.width - 32, height: 80)
                         .clipShape(CustomCorner(corners: [.bottomLeft,.bottomRight], radius: 15))
                     
                     HStack(spacing: 12) {
@@ -64,7 +64,7 @@ struct CardView1: View {
                         .foregroundStyle(Color("TextColor"))
                     }
                     .padding(.horizontal, 16)
-                    .frame(width:UIScreen.main.bounds.width - 24, height: 80, alignment: .leading)
+                    .frame(width:UIScreen.main.bounds.width - 32, height: 80, alignment: .leading)
                 }
             }
         }
