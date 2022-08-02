@@ -28,7 +28,7 @@ struct InitialPickerView: View {
             }
             
             VStack(spacing:UIScreen.main.bounds.height / 20) {
-                HStack(spacing: 20) {
+                HStack(spacing: UIScreen.main.bounds.width / 15) {
                     
                     VStack(spacing: 20) {
                         ZStack {
@@ -52,26 +52,6 @@ struct InitialPickerView: View {
                     
                     VStack(spacing: 20) {
                         ZStack {
-                            ColorPicker("",selection: $userColor.secondaryColor, supportsOpacity: false)
-                                .labelsHidden()
-                                .padding()
-                                .scaleEffect(CGSize(width: 3, height: 3))
-                            
-                            Circle()
-                                .fill(userColor.secondaryColor)
-                                .frame(width: 90, height: 90)
-                                .allowsHitTesting(false)
-                                .background(
-                                    Circle()
-                                        .stroke(Color("OutlineColor"), lineWidth: 10))
-                        }
-                        
-                        Text("Secondary")
-                            .font(Font.custom("Ubuntu", size: 16))
-                    }
-                    
-                    VStack(spacing: 20) {
-                        ZStack {
                             ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
                                 .labelsHidden()
                                 .padding()
@@ -85,8 +65,28 @@ struct InitialPickerView: View {
                                     Circle()
                                         .stroke(Color("OutlineColor"), lineWidth: 10))
                         }
-                        
+    
                         Text("Accent")
+                            .font(Font.custom("Ubuntu", size: 16))
+                    }
+                    
+                    VStack(spacing: 20) {
+                        ZStack {
+                            ColorPicker("",selection: $userColor.bgColor, supportsOpacity: false)
+                                .labelsHidden()
+                                .padding()
+                                .scaleEffect(CGSize(width: 3, height: 3))
+                            
+                            Circle()
+                                .fill(userColor.bgColor)
+                                .frame(width: 90, height: 90)
+                                .allowsHitTesting(false)
+                                .background(
+                                    Circle()
+                                        .stroke(Color("OutlineColor"), lineWidth: 10))
+                        }
+    
+                        Text("Background")
                             .font(Font.custom("Ubuntu", size: 16))
                     }
                 }
@@ -95,7 +95,6 @@ struct InitialPickerView: View {
                 VStack(spacing: 16) {
                     Button {
                         appState.switchScene = .main
-                        // save custom color to core data?
                         
                     } label: {
                         Text("Get Started")

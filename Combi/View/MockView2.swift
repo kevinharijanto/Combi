@@ -8,37 +8,47 @@
 import SwiftUI
 
 struct MockView2: View {
-    @ObservedObject var userColor: UserColor
+    //ViewModel
+    @ObservedObject var viewModel: MockViewModel
+    
+    init(viewModel: MockViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         ZStack {
-            Color.white
+            viewModel.bgColor
                 .ignoresSafeArea()
-            RoundedRectangle(cornerRadius: 25)
-                .frame(width: 266, height: 144)
-                .foregroundColor(userColor.secondaryColor.opacity(0.2))
-                .offset(x: 30,y: 95)
-            Image("5.")
+
+            Image("6.2primary neutrals")
                 .renderingMode(.template)
-                .foregroundColor(userColor.primaryColor)
-            Image("4.")
+                .foregroundColor(viewModel.accentNeutralSurface())
+
+            Image("5.2accent")
                 .renderingMode(.template)
-                .foregroundColor(userColor.primaryColor)
-            Image("3.")
+                .foregroundColor(viewModel.primaryColor)
+
+            Image("4.2neutral on bg")
                 .renderingMode(.template)
-                .foregroundColor(userColor.primaryColor)
-            Image("2.")
+                .foregroundColor(viewModel.primaryOnBackground())
+            
+            Image("3.2primary on accent")
                 .renderingMode(.template)
-                .foregroundColor(userColor.secondaryColor)
-            Image("1.")
+                .foregroundColor(viewModel.accentColor)
+            
+            Image("2.2primary on neutral")
                 .renderingMode(.template)
-                .foregroundColor(userColor.accentColor)
+                .foregroundColor(viewModel.accentOnBackground())
+
+            Image("1.2primary on bg")
+                .renderingMode(.template)
+                .foregroundColor(viewModel.accentOnBackground())
         }
     }
 }
 
 struct MockView2_Previews: PreviewProvider {
     static var previews: some View {
-        MockView2(userColor: UserColor())
+        MockView2(viewModel: MockViewModel(userColor: UserColor()))
     }
 }

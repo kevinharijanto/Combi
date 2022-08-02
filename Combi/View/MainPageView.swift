@@ -25,7 +25,7 @@ struct MainPageView: View {
             VStack(spacing: 20) {
                 Spacer(minLength: 10)
                 
-                Text("Combi-ne It!")
+                Text("Combi-ne It")
                     .font(.custom("Ubuntu-Bold", size: 36))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 16)
@@ -71,11 +71,11 @@ struct MainPageView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .fill(Color("CardColor"))
-                .frame(maxWidth: .infinity)
+                .frame(height: 160)
                 .padding(.horizontal, 16)
                 .shadow(color: Color("ShadowColor").opacity(0.3), radius: 10, x: 0, y: 4)
             
-            HStack(spacing: 20) {
+            HStack(spacing: UIScreen.main.bounds.width / 15) {
                 
                 VStack(spacing: 20) {
                     ZStack {
@@ -99,26 +99,6 @@ struct MainPageView: View {
                 
                 VStack(spacing: 20) {
                     ZStack {
-                        ColorPicker("",selection: $userColor.secondaryColor, supportsOpacity: false)
-                            .labelsHidden()
-                            .padding()
-                            .scaleEffect(CGSize(width: 3, height: 3))
-                        
-                        Circle()
-                            .fill(userColor.secondaryColor)
-                            .frame(width: 90, height: 90)
-                            .allowsHitTesting(false)
-                            .background(
-                                Circle()
-                                    .stroke(Color("OutlineColor"), lineWidth: 10))
-                    }
-                    
-                    Text("Secondary")
-                        .font(Font.custom("Ubuntu", size: 16))
-                }
-                
-                VStack(spacing: 20) {
-                    ZStack {
                         ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
                             .labelsHidden()
                             .padding()
@@ -132,8 +112,28 @@ struct MainPageView: View {
                                 Circle()
                                     .stroke(Color("OutlineColor"), lineWidth: 10))
                     }
-                    
+
                     Text("Accent")
+                        .font(Font.custom("Ubuntu", size: 16))
+                }
+                
+                VStack(spacing: 20) {
+                    ZStack {
+                        ColorPicker("",selection: $userColor.bgColor, supportsOpacity: false)
+                            .labelsHidden()
+                            .padding()
+                            .scaleEffect(CGSize(width: 3, height: 3))
+                        
+                        Circle()
+                            .fill(userColor.bgColor)
+                            .frame(width: 90, height: 90)
+                            .allowsHitTesting(false)
+                            .background(
+                                Circle()
+                                    .stroke(Color("OutlineColor"), lineWidth: 10))
+                    }
+
+                    Text("Background")
                         .font(Font.custom("Ubuntu", size: 16))
                 }
             }
@@ -150,7 +150,7 @@ struct MainPageView: View {
                     Rectangle()
                         .fill(userColor.primaryColor)
                         .frame(width: UIScreen.main.bounds.width-42,height: 200)
-                    
+
                     Text("Hello, World!")
                         .font(Font.custom("Ubuntu-Bold", size: 24))
                         .foregroundColor(userColor.accentColor)
@@ -160,53 +160,31 @@ struct MainPageView: View {
                     Rectangle()
                         .fill(userColor.accentColor)
                         .frame(width: UIScreen.main.bounds.width-42,height: 200)
-                    
+
                     Text("Hello, World!")
                         .font(Font.custom("Ubuntu-Bold", size: 24))
                         .foregroundColor(userColor.primaryColor)
                 }
-                //bg prim, text sec
-                ZStack {
-                    Rectangle()
-                        .fill(userColor.primaryColor)
-                        .frame(width: UIScreen.main.bounds.width-42,height: 200)
-                    
-                    Text("Hello, World!")
-                        .font(Font.custom("Ubuntu-Bold", size: 24))
-                        .foregroundColor(userColor.secondaryColor)
-                }
-                //bg sec, text prim
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15)
-                        .fill(userColor.secondaryColor)
-                        .frame(width: UIScreen.main.bounds.width-42,height: 200)
-                    
-                    Text("Hello, World!")
-                        .font(Font.custom("Ubuntu-Bold", size: 24))
-                        .foregroundColor(userColor.primaryColor)
-                        
-                }
-                //bg accent, text sec
+                //bg accent, text white
                 ZStack {
                     Rectangle()
                         .fill(userColor.accentColor)
                         .frame(width: UIScreen.main.bounds.width-42,height: 200)
-                    
+
                     Text("Hello, World!")
                         .font(Font.custom("Ubuntu-Bold", size: 24))
-                        .foregroundColor(userColor.secondaryColor)
+                        .foregroundColor(.white)
                 }
-                //bg sec, text accent
+                //bg accent, text black
                 ZStack {
                     Rectangle()
-                        .fill(userColor.secondaryColor)
+                        .fill(userColor.accentColor)
                         .frame(width: UIScreen.main.bounds.width-42,height: 200)
-                    
+
                     Text("Hello, World!")
                         .font(Font.custom("Ubuntu-Bold", size: 24))
-                        .foregroundColor(userColor.accentColor)
+                        .foregroundColor(.combiBlack)
                 }
-                
             }
             .mask(RoundedRectangle(cornerRadius: 15))
         }
@@ -220,9 +198,7 @@ struct MainPageView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CombiContentView()
-                .previewDevice("iPhone 13")
-//            CombiContentView()
         }
-//            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }

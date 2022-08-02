@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-enum CurrentView: Int {
-    case onboarding
-    case initialpicker
-    case main
-}
 
 // Define observable
 class AppState: ObservableObject {
+    enum CurrentView: Int {
+        case onboarding
+        case initialpicker
+        case main
+    }
+    
     @AppStorage("scene") var switchScene = CurrentView.onboarding
 //    @Published var switchScene = CurrentView.main
 }
-
 
 struct CombiContentView: View {
     @StateObject var appState = AppState()

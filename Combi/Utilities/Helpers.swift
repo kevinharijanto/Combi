@@ -40,8 +40,7 @@ public struct PagingView<Views: View>: View {
   public init(
     config: Config = Config(),
     page: Binding<PageIndex>? = nil,
-    @ViewBuilder _ content: () -> Views
-  ) {
+    @ViewBuilder _ content: () -> Views){
     tree = _VariadicView.Tree(
       Root(config: config, page: page),
       content: content
@@ -51,8 +50,7 @@ public struct PagingView<Views: View>: View {
   public init(
     direction: _PagingViewConfig.Direction,
     page: Binding<PageIndex>? = nil,
-    @ViewBuilder _ content: () -> Views
-  ) {
+    @ViewBuilder _ content: () -> Views) {
     tree = _VariadicView.Tree(
       Root(config: .init(direction: direction), page: page),
       content: content

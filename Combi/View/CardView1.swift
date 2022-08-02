@@ -18,7 +18,6 @@ struct CardView1: View {
     var item = cardItems[0]
     
     var body: some View {
-        
         card1
     }
     var card1: some View {

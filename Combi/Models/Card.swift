@@ -18,7 +18,7 @@ struct Card: Identifiable {
 }
 
 var cardItems: [Card] = [
-    Card(logo: "DribbbleLogo", cardTitle: "Task Management App", cardScreens: "3 Screens", artwork: "card1"),
+    Card(logo: "CardLogo", cardTitle: "Book Summarizing App", cardScreens: "2 Screens", artwork: "Mock1 Card"),
 
-    Card(logo: "DribbbleLogo", cardTitle: "Habit Tracker App", cardScreens: "2 Screens", artwork: "card2"),
+    Card(logo: "CardLogo", cardTitle: "Habit Tracker App", cardScreens: "3 Screens", artwork: "Mock1 Card"),
 ]

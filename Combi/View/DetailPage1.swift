@@ -14,6 +14,7 @@ struct DetailPage1: View {
     @EnvironmentObject var userColor: UserColor
     //ViewModel
     @ObservedObject var viewModel: DetailViewModel
+
     //Namespace
     var animation: Namespace.ID
     //Drag Gesture Properties
@@ -26,7 +27,7 @@ struct DetailPage1: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack(alignment: .center, spacing: 16) {
+            VStack(alignment: .center, spacing: 0) {
                 Image(item.artwork)
                     .resizable()
                     .scaledToFill()
@@ -55,57 +56,68 @@ struct DetailPage1: View {
                 .padding(.horizontal, 20)
                 .frame(width:UIScreen.main.bounds.width, height: 80, alignment: .leading)
                 
-                Divider()
-                
-//                Spacer()
-                
-                HStack {
-                    Spacer()
-                    Link(destination: URL(string: "https://dribbble.com/shots/17219653-Task-Management-App")!) {
-                        Image(systemName: "link.circle.fill")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(Color("TextColor"))
-                    }
+                VStack(spacing: 16) {
+                    Divider()
                     
-                    Spacer()
-                }
-                .padding(.horizontal, 16)
-                
-                HStack(spacing: 16) {
-                    Spacer()
-
-                    Text("Original Design by Achmad Qomarudin")
-                        .font(Font.custom("Ubuntu", size: 16))
-                        .foregroundColor(Color("TextColor"))
                     
-                    Spacer()
-                }
-                
-                Text("Mock Views")
-                    .font(Font.custom("Ubuntu-Bold", size: 36))
-                    .foregroundColor(Color("TextColor"))
+//                    HStack {
+//                        Spacer()
+//                        Link(destination: URL(string: "https://dribbble.com/shots/17219653-Task-Management-App")!) {
+//                            Image(systemName: "link.circle.fill")
+//                                .resizable()
+//                                .frame(width: 50, height: 50)
+//                                .foregroundColor(Color("TextColor"))
+//                        }
+//
+//                        Spacer()
+//                    }
+//                    .padding(.horizontal, 16)
+//
+//                    HStack(spacing: 16) {
+//                        Spacer()
+//
+//                        Text("Original Design by Achmad Qomarudin")
+//                            .font(Font.custom("Ubuntu", size: 16))
+//                            .foregroundColor(Color("TextColor"))
+//
+//                        Spacer()
+//                    }
+//                    
+//                    Text("Mock Views")
+//                        .font(Font.custom("Ubuntu-Bold", size: 36))
+//                        .foregroundColor(Color("TextColor"))
 
-                PagingView(config: .init(margin: 64, spacing:64)) {
-                    Group {
-                        MockView1(userColor: userColor)
-                            .scaleEffect(0.8)
-                            .frame(width: 312, height: 675)
-                        MockView2(userColor: userColor)
-                            .scaleEffect(0.8)
-                            .frame(width: 312, height: 675)
+                    PagingView(config: .init(margin: 64, spacing:64)) {
+                        Group {
+                            // passing usercolor ke viewmodel
+                            MockView1(viewModel: MockViewModel(userColor: self.userColor))
+                                .scaleEffect(0.8)
+                                .frame(width: 312, height: 675)
+                            MockView2(viewModel: MockViewModel(userColor: self.userColor))
+                                .scaleEffect(0.8)
+                                .frame(width: 312, height: 675)
+                            MockView3(viewModel: MockViewModel(userColor: self.userColor))
+                                .scaleEffect(0.8)
+                                .frame(width: 312, height: 675)
+                            MockView4(viewModel: MockViewModel(userColor: self.userColor))
+                                .scaleEffect(0.8)
+                                .frame(width: 312, height: 675)
+                            MockView5(viewModel: MockViewModel(userColor: self.userColor))
+                                .scaleEffect(0.8)
+                                .frame(width: 312, height: 675)
+                        }
+                        .mask(RoundedRectangle(cornerRadius: 15))
+                        .background(
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(lineWidth: 3)
+                                .opacity(0.2)
+                                .frame(width: 312, height: 675)
+                        )
                     }
-                    .mask(RoundedRectangle(cornerRadius: 15))
-                    .background(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(lineWidth: 3)
-                            .opacity(0.2)
-                            .frame(width: 312, height: 675)
-                    )
+                    .frame(minWidth: 390, minHeight: 700)
+                    
+                    Spacer(minLength: 100)
                 }
-                .frame(minWidth: 390, minHeight: 700)
-                
-                Spacer(minLength: 100)
             }
         }
 //        .scaleEffect(scale)
@@ -154,13 +166,13 @@ struct DetailPage1: View {
                                 .opacity(openButton ? 1 : 0)
                                 .offset(y: 20)
                             
-                            ColorPicker("",selection: $userColor.secondaryColor, supportsOpacity: false)
+                            ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
                                 .labelsHidden()
                                 .padding()
                                 .scaleEffect(CGSize(width: 1.5, height: 1.5))
                                 .opacity(openButton ? 1 : 0)
                             
-                            ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
+                            ColorPicker("",selection: $userColor.bgColor, supportsOpacity: false)
                                 .labelsHidden()
                                 .padding()
                                 .scaleEffect(CGSize(width: 1.5, height: 1.5))

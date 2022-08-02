@@ -13,8 +13,12 @@
 		0E23C8F7288FB3CD00E7F4F5 /* CombiContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8F6288FB3CD00E7F4F5 /* CombiContentView.swift */; };
 		0E23C8FB289035F200E7F4F5 /* DetailPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8FA289035F200E7F4F5 /* DetailPage1.swift */; };
 		0E23C8FD2890361D00E7F4F5 /* CardView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C8FC2890361D00E7F4F5 /* CardView1.swift */; };
-		0E23C90728919AC600E7F4F5 /* MockView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C90628919AC600E7F4F5 /* MockView2.swift */; };
 		0E23C9092891A7CF00E7F4F5 /* MockView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E23C9082891A7CF00E7F4F5 /* MockView1.swift */; };
+		0E34B3FD2892E1FF00E4DE32 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E34B3FC2892E1FF00E4DE32 /* MockViewModel.swift */; };
+		0E917C9B28983335007278A9 /* MockView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E917C9A28983335007278A9 /* MockView2.swift */; };
+		0E917C9D28983586007278A9 /* MockView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E917C9C28983586007278A9 /* MockView3.swift */; };
+		0E917C9F28983A4C007278A9 /* MockView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E917C9E28983A4C007278A9 /* MockView4.swift */; };
+		0E917CA12898DDFA007278A9 /* MockView5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E917CA02898DDFA007278A9 /* MockView5.swift */; };
 		0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2923C288D59AB002E3BEE /* CombiApp.swift */; };
 		0EC29241288D59AB002E3BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29240288D59AB002E3BEE /* Assets.xcassets */; };
 		0EC29244288D59AB002E3BEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EC29243288D59AB002E3BEE /* Preview Assets.xcassets */; };
@@ -27,7 +31,6 @@
 		0EC2927F288ECE2E002E3BEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2927E288ECE2E002E3BEE /* Extensions.swift */; };
 		0EC29281288ECE3A002E3BEE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29280288ECE3A002E3BEE /* Helpers.swift */; };
 		0EC29286288EFD95002E3BEE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29285288EFD95002E3BEE /* DetailViewModel.swift */; };
-		0EC29288288F1FAB002E3BEE /* MockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC29287288F1FAB002E3BEE /* MockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +40,12 @@
 		0E23C8F6288FB3CD00E7F4F5 /* CombiContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiContentView.swift; sourceTree = "<group>"; };
 		0E23C8FA289035F200E7F4F5 /* DetailPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage1.swift; sourceTree = "<group>"; };
 		0E23C8FC2890361D00E7F4F5 /* CardView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView1.swift; sourceTree = "<group>"; };
-		0E23C90628919AC600E7F4F5 /* MockView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView2.swift; sourceTree = "<group>"; };
 		0E23C9082891A7CF00E7F4F5 /* MockView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView1.swift; sourceTree = "<group>"; };
+		0E34B3FC2892E1FF00E4DE32 /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
+		0E917C9A28983335007278A9 /* MockView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView2.swift; sourceTree = "<group>"; };
+		0E917C9C28983586007278A9 /* MockView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView3.swift; sourceTree = "<group>"; };
+		0E917C9E28983A4C007278A9 /* MockView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView4.swift; sourceTree = "<group>"; };
+		0E917CA02898DDFA007278A9 /* MockView5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView5.swift; sourceTree = "<group>"; };
 		0EC29239288D59AB002E3BEE /* Combi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC2923C288D59AB002E3BEE /* CombiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombiApp.swift; sourceTree = "<group>"; };
 		0EC29240288D59AB002E3BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,7 +60,6 @@
 		0EC2927E288ECE2E002E3BEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0EC29280288ECE3A002E3BEE /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0EC29285288EFD95002E3BEE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		0EC29287288F1FAB002E3BEE /* MockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +140,11 @@
 				0EC2924A288D59D5002E3BEE /* MainPageView.swift */,
 				0E23C8FC2890361D00E7F4F5 /* CardView1.swift */,
 				0E23C8FA289035F200E7F4F5 /* DetailPage1.swift */,
-				0EC29287288F1FAB002E3BEE /* MockView.swift */,
 				0E23C9082891A7CF00E7F4F5 /* MockView1.swift */,
-				0E23C90628919AC600E7F4F5 /* MockView2.swift */,
+				0E917C9A28983335007278A9 /* MockView2.swift */,
+				0E917C9C28983586007278A9 /* MockView3.swift */,
+				0E917C9E28983A4C007278A9 /* MockView4.swift */,
+				0E917CA02898DDFA007278A9 /* MockView5.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				0EC29285288EFD95002E3BEE /* DetailViewModel.swift */,
+				0E34B3FC2892E1FF00E4DE32 /* MockViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -242,19 +251,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E23C8F5288FA20800E7F4F5 /* InitialPickerView.swift in Sources */,
+				0E917C9B28983335007278A9 /* MockView2.swift in Sources */,
 				0EC2923D288D59AB002E3BEE /* CombiApp.swift in Sources */,
 				0EC2926A288D7157002E3BEE /* UserColor.swift in Sources */,
-				0EC29288288F1FAB002E3BEE /* MockView.swift in Sources */,
 				0E23C8ED288F8D9300E7F4F5 /* Onboarding.swift in Sources */,
+				0E917C9F28983A4C007278A9 /* MockView4.swift in Sources */,
 				0EC2924B288D59D5002E3BEE /* MainPageView.swift in Sources */,
+				0E917CA12898DDFA007278A9 /* MockView5.swift in Sources */,
+				0E917C9D28983586007278A9 /* MockView3.swift in Sources */,
 				0EC29286288EFD95002E3BEE /* DetailViewModel.swift in Sources */,
+				0E34B3FD2892E1FF00E4DE32 /* MockViewModel.swift in Sources */,
 				0EC29281288ECE3A002E3BEE /* Helpers.swift in Sources */,
 				0E23C8F1288F941600E7F4F5 /* OnboardingView.swift in Sources */,
 				0E23C8FB289035F200E7F4F5 /* DetailPage1.swift in Sources */,
 				0E23C8FD2890361D00E7F4F5 /* CardView1.swift in Sources */,
 				0E23C9092891A7CF00E7F4F5 /* MockView1.swift in Sources */,
 				0E23C8F7288FB3CD00E7F4F5 /* CombiContentView.swift in Sources */,
-				0E23C90728919AC600E7F4F5 /* MockView2.swift in Sources */,
 				0EC2927F288ECE2E002E3BEE /* Extensions.swift in Sources */,
 				0EC2927C288ECB9A002E3BEE /* Card.swift in Sources */,
 			);
@@ -398,12 +410,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinharijanto.Combi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -428,12 +440,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinharijanto.Combi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -55,8 +55,8 @@ struct OnboardingView: View {
             .frame(width: UIScreen.main.bounds.width)
 //            .padding(.bottom, UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 > 20 ? 0 : 20)
             .foregroundStyle(Color("TextColor"))
-            .tabViewStyle(.page(indexDisplayMode: .never))
-//            .indexViewStyle(.page(backgroundDisplayMode: .automatic))
+            .tabViewStyle(.page(indexDisplayMode: .automatic))
+            .indexViewStyle(.page(backgroundDisplayMode: .automatic))
             
             Button {
                 withAnimation {
