@@ -99,13 +99,13 @@ struct MainPageView: View {
                 
                 VStack(spacing: 20) {
                     ZStack {
-                        ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
+                        ColorPicker("",selection: $userColor.neutralColor, supportsOpacity: false)
                             .labelsHidden()
                             .padding()
                             .scaleEffect(CGSize(width: 3, height: 3))
                         
                         Circle()
-                            .fill(userColor.accentColor)
+                            .fill(userColor.neutralColor)
                             .frame(width: 90, height: 90)
                             .allowsHitTesting(false)
                             .background(
@@ -113,7 +113,7 @@ struct MainPageView: View {
                                     .stroke(Color("OutlineColor"), lineWidth: 10))
                     }
 
-                    Text("Accent")
+                    Text("Neutrals")
                         .font(Font.custom("Ubuntu", size: 16))
                 }
                 
@@ -153,37 +153,27 @@ struct MainPageView: View {
 
                     Text("Hello, World!")
                         .font(Font.custom("Ubuntu-Bold", size: 24))
-                        .foregroundColor(userColor.accentColor)
+                        .foregroundColor(userColor.neutralColor)
                 }
                 //bg accent, text prim
                 ZStack {
                     Rectangle()
-                        .fill(userColor.accentColor)
+                        .fill(userColor.neutralColor)
                         .frame(width: UIScreen.main.bounds.width-42,height: 200)
 
                     Text("Hello, World!")
                         .font(Font.custom("Ubuntu-Bold", size: 24))
                         .foregroundColor(userColor.primaryColor)
                 }
-                //bg accent, text white
+                // primary on bg
                 ZStack {
                     Rectangle()
-                        .fill(userColor.accentColor)
+                        .fill(userColor.bgColor)
                         .frame(width: UIScreen.main.bounds.width-42,height: 200)
 
                     Text("Hello, World!")
                         .font(Font.custom("Ubuntu-Bold", size: 24))
-                        .foregroundColor(.white)
-                }
-                //bg accent, text black
-                ZStack {
-                    Rectangle()
-                        .fill(userColor.accentColor)
-                        .frame(width: UIScreen.main.bounds.width-42,height: 200)
-
-                    Text("Hello, World!")
-                        .font(Font.custom("Ubuntu-Bold", size: 24))
-                        .foregroundColor(.combiBlack)
+                        .foregroundColor(userColor.primaryColor)
                 }
             }
             .mask(RoundedRectangle(cornerRadius: 15))

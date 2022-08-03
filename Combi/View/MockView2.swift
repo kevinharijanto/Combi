@@ -20,29 +20,25 @@ struct MockView2: View {
             viewModel.bgColor
                 .ignoresSafeArea()
 
-            Image("6.2primary neutrals")
+            Image("5.2neutral")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentNeutralSurface())
+                .foregroundColor(viewModel.neutralOnBackground())
 
-            Image("5.2accent")
+            Image("4.2primary")
                 .renderingMode(.template)
                 .foregroundColor(viewModel.primaryColor)
-
-            Image("4.2neutral on bg")
-                .renderingMode(.template)
-                .foregroundColor(viewModel.primaryOnBackground())
             
-            Image("3.2primary on accent")
+            Image("3.2neutral on primary")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentColor)
+                .foregroundColor(viewModel.neutralOnBackground())
             
-            Image("2.2primary on neutral")
+            Image("2.2neutral on neutral bg")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+                .foregroundColor(viewModel.neutralOnBackground())
 
-            Image("1.2primary on bg")
+            Image("1.2neutral on bg")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+                .foregroundColor(viewModel.neutralOnBackground())
         }
     }
 }

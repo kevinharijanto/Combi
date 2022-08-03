@@ -19,27 +19,23 @@ struct MockView3: View {
         ZStack {
             viewModel.bgColor
                 .ignoresSafeArea()
-
-            Image("6.3accent")
+            
+            Image("5.3primary")
                 .renderingMode(.template)
                 .foregroundColor(viewModel.primaryColor)
             
-            Image("5.3primary neutrals")
-                .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
-            
             //jempol kanan
-            Image("4.3primary on accent")
+            Image("4.3neutral on primary")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentColor)
+                .foregroundColor(viewModel.neutralOnBackground())
             //jempol kiri
-            Image("3.3primary on neutral")
+            Image("3.3neutral on neutral")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+                .foregroundColor(viewModel.neutralOnBackground())
             
-            Image("2.3primary on bg")
+            Image("2.3neutral on bg")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+                .foregroundColor(viewModel.neutralOnBackground())
             
             Image("1.3illustration")
         }
