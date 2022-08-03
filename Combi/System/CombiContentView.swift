@@ -16,8 +16,8 @@ class AppState: ObservableObject {
         case main
     }
     
-    @AppStorage("scene") var switchScene = CurrentView.onboarding
-//    @Published var switchScene = CurrentView.main
+//    @AppStorage("scene") var switchScene = CurrentView.onboarding
+    @Published var switchScene = CurrentView.onboarding
 }
 
 struct CombiContentView: View {

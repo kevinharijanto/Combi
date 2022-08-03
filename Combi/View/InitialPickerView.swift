@@ -52,13 +52,13 @@ struct InitialPickerView: View {
                     
                     VStack(spacing: 20) {
                         ZStack {
-                            ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
+                            ColorPicker("",selection: $userColor.neutralColor, supportsOpacity: false)
                                 .labelsHidden()
                                 .padding()
                                 .scaleEffect(CGSize(width: 3, height: 3))
                             
                             Circle()
-                                .fill(userColor.accentColor)
+                                .fill(userColor.neutralColor)
                                 .frame(width: 90, height: 90)
                                 .allowsHitTesting(false)
                                 .background(
@@ -66,7 +66,7 @@ struct InitialPickerView: View {
                                         .stroke(Color("OutlineColor"), lineWidth: 10))
                         }
     
-                        Text("Accent")
+                        Text("Neutrals")
                             .font(Font.custom("Ubuntu", size: 16))
                     }
                     

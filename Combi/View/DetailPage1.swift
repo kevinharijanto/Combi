@@ -166,7 +166,7 @@ struct DetailPage1: View {
                                 .opacity(openButton ? 1 : 0)
                                 .offset(y: 20)
                             
-                            ColorPicker("",selection: $userColor.accentColor, supportsOpacity: false)
+                            ColorPicker("",selection: $userColor.neutralColor, supportsOpacity: false)
                                 .labelsHidden()
                                 .padding()
                                 .scaleEffect(CGSize(width: 1.5, height: 1.5))

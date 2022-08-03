@@ -19,47 +19,36 @@ struct MockView4: View {
         ZStack {
             viewModel.bgColor
                 .ignoresSafeArea()
-
-            Image("8.4bottom element")
             
-            Image("7.4semantic")
-            
-            Image("6.4accent")
+            Image("5.4primary")
                 .renderingMode(.template)
                 .foregroundColor(viewModel.primaryColor)
             
-            Image("5.4elements")
+            Image("4.4illustration")
             
-            Image("4.4primary on accent")
+            Image("3.4neutral on primary")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+                .foregroundColor(viewModel.neutralOnBackground())
             
-            Image("3.4primary neutrals")
+            Image("2.4neutral on neutrals")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentNeutralSurface())
+                .foregroundColor(viewModel.neutralOnBackground())
             
-            Image("2.4primary on neutrals")
+            Image("1.4neutral on bg")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+                .foregroundColor(viewModel.neutralOnBackground())
             
-            Image("1.4primary on bg")
+            Image("0.5tabbar color")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+                .foregroundColor(viewModel.darkNeutralColor())
             
-            // tab bar masi blm bener
-            ZStack {
-                Image("0.4tabbar")
-                    .renderingMode(.template)
-                    .foregroundColor(viewModel.accentOnPrimaryNeutral())
-                
-                Image("0.4tabbar white")
-                    .renderingMode(.template)
-                    .foregroundColor(viewModel.tabBarWhite())
-                
-                Image("0.4tabbar accent")
-                    .renderingMode(.template)
-                    .foregroundColor(viewModel.primaryColor)
-            }
+            Image("0tabbar white")
+                .renderingMode(.template)
+                .foregroundColor(viewModel.whiteOnNeutral())
+            
+            Image("0tabbar primary")
+                .renderingMode(.template)
+                .foregroundColor(viewModel.primaryColor)
         }
     }
 }

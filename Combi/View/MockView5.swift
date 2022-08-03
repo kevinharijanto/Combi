@@ -20,55 +20,47 @@ struct MockView5: View {
             viewModel.bgColor
                 .ignoresSafeArea()
 
-            Image("12.5primary variation")
-                .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
-            
-            Image("11.5ilustration")
-
-            Image("10.5accent neutral")
+            Image("11.5primary")
                 .renderingMode(.template)
                 .foregroundColor(viewModel.primaryColor)
 
-            Image("9.5primary on neutral")
+            Image("10.5neutral variation")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+                .foregroundColor(viewModel.neutralOnBackground())
+                .saturation(3)
 
-            Image("8.5primary on bg")
-                .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnBackground())
+            Image("9.5ilustration")
 
-            Image("7.5primary tabbar")
+            Image("8.5neutral on bg")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.accentOnPrimaryNeutral())
+                .foregroundColor(viewModel.neutralOnBackground())
 
-            Image("6.5tabbar accent")
+            Image("7.5playbutton")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.primaryColor)
+                .foregroundColor(viewModel.neutralColor)
 
-            Image("5.5tabbar white")
+            Image("6.5neutral")
                 .renderingMode(.template)
-                .foregroundColor(viewModel.tabBarWhite())
+                .foregroundColor(viewModel.neutralOnBackground())
 
             ZStack {
-                Image("4.5neutral")
+                Image("5.5white on primary")
                     .renderingMode(.template)
-                    .foregroundColor(viewModel.primaryColor.opacity(0.1))
+                    .foregroundColor(viewModel.neutralOnNeutral())
 
-                //button and text
-                Image("textandbutton")
-                    .renderingMode(.template)
-                    .foregroundColor(viewModel.accentOnBackground())
+                Image("4.5element")
                 
-                Image("playbutton")
+                Image("0.5tabbar color")
                     .renderingMode(.template)
-                    .foregroundColor(viewModel.accentButtonOnBackground())
-
-                Image("2.5white on primary")
+                    .foregroundColor(viewModel.darkNeutralColor())
+                
+                Image("0tabbar white")
                     .renderingMode(.template)
-                    .foregroundColor(viewModel.primaryOnAccent().lighter())
-
-                Image("1.5element")
+                    .foregroundColor(viewModel.whiteOnNeutral())
+                
+                Image("0tabbar primary")
+                    .renderingMode(.template)
+                    .foregroundColor(viewModel.primaryColor)
             }
         }
     }

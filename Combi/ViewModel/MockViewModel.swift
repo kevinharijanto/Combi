@@ -11,13 +11,13 @@ class MockViewModel: ObservableObject {
     let userColor: UserColor
 
     @Published var primaryColor: Color
-    @Published var accentColor: Color
+    @Published var neutralColor: Color
     @Published var bgColor: Color
     
     init(userColor: UserColor) {
         self.userColor = userColor
         self.primaryColor = userColor.primaryColor
-        self.accentColor = userColor.accentColor
+        self.neutralColor = userColor.neutralColor
         self.bgColor = userColor.bgColor
     }
 
@@ -47,64 +47,29 @@ class MockViewModel: ObservableObject {
         return brightness < 0.5 ? lightPrimaryColor() : darkPrimaryColor()
     }
     
-    func primaryOnAccent() -> Color {
-        let brightness = brightnessValues(color: accentColor)
-        return brightness < 0.6 ? lightPrimaryColor() : darkPrimaryColor()
+    // neutral colors
+    func darkNeutralColor() -> Color {
+        return brightnessValues(color: neutralColor) < 0.5 ? neutralColor : .black
     }
     
-    func primaryOnPrimaryNeutral() -> Color {
-        let brightness = brightnessValues(color: primaryNeutralSurface())
-        return brightness < 0.6 ? lightPrimaryColor() : darkPrimaryColor()
+    func lightNeutralColor() -> Color {
+        return brightnessValues(color: neutralColor) < 0.5 ?  .white : neutralColor
     }
     
-    func primaryNeutralSurface() -> Color {
+    func neutralOnBackground() -> Color {
         let brightness = brightnessValues(color: bgColor)
-        return brightness < 0.5 ? primaryColor.lighter().opacity(0.5) : primaryColor.darker().opacity(0.5)
+        return brightness < 0.5 ? lightNeutralColor() : darkNeutralColor()
     }
     
-    //accent colors
-    func darkAccentColor() -> Color {
-        return brightnessValues(color: accentColor) < 0.5 ? accentColor : .combiBlack
-    }
-    
-    func lightAccentColor() -> Color {
-        return brightnessValues(color: accentColor) < 0.5 ? .white : accentColor
-    }
-    
-    func accentOnBackground() -> Color {
-        let brightness = brightnessValues(color: bgColor)
-        return brightness < 0.6 ? lightAccentColor() : darkAccentColor()
-    }
-    
-    func accentButtonOnBackground() -> Color {
-        let brightness = brightnessValues(color: bgColor)
-        return brightness < 0.6 ? accentColor : accentColor.lighter()
-    }
-    
-    func accentNeutralSurface() -> Color {
-        let brightness = brightnessValues(color: bgColor)
-        return brightness < 0.5 ? .white : .black
-    }
-    
-    func accentOnPrimaryNeutral() -> Color {
-        let brightness = brightnessValues(color: primaryNeutralSurface())
-        return brightness < 0.6 ? lightAccentColor() : darkAccentColor()
-    }
-    
-    func accentOnPrimary() -> Color {
-        let brightness = brightnessValues(color: primaryColor)
-        return brightness < 0.5 ? .white : darkAccentColor()
+    func neutralOnNeutral() -> Color {
+        let brightness = brightnessValues(color: neutralColor)
+        return brightness < 0.5 ? lightNeutralColor() : darkNeutralColor()
     }
     
     // tab bar
-    func tabBarWhite() -> Color {
-        let brightness = brightnessValues(color: accentOnPrimaryNeutral())
-        return brightness < 0.6 ? .white : .combiBlack
+    func whiteOnNeutral() -> Color {
+        let brightness = brightnessValues(color: neutralColor)
+        return brightness < 0.5 ? .white : .combiBlack
     }
-    
-//    func accentOnPrimary() -> Color {
-//        let brightness = brightnessValues(color: primaryOnBackground())
-//        return brightness < 0.6 ? accentColor.lighter() : accentColor.darker()
-//    }
     
 }
