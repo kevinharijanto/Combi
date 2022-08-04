@@ -165,6 +165,17 @@ struct MainPageView: View {
                         .font(Font.custom("Ubuntu-Bold", size: 24))
                         .foregroundColor(userColor.primaryColor)
                 }
+                // neutrals on bg
+                ZStack {
+                    Rectangle()
+                        .fill(userColor.bgColor)
+                        .frame(width: UIScreen.main.bounds.width-42,height: 200)
+
+                    Text("Hello, World!")
+                        .font(Font.custom("Ubuntu-Bold", size: 24))
+                        .foregroundColor(userColor.neutralColor)
+                }
+                
                 // primary on bg
                 ZStack {
                     Rectangle()

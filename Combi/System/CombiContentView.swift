@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 // Define observable
 class AppState: ObservableObject {
     enum CurrentView: Int {
@@ -16,8 +15,8 @@ class AppState: ObservableObject {
         case main
     }
     
-//    @AppStorage("scene") var switchScene = CurrentView.onboarding
-    @Published var switchScene = CurrentView.onboarding
+    @AppStorage("scene") var switchScene = CurrentView.onboarding
+//    @Published var switchScene = CurrentView.onboarding
 }
 
 struct CombiContentView: View {
